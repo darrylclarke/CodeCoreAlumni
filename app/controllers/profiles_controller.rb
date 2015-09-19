@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @user = current_user
     @profile = Profile.new
     @project = Project.new
     @education = Education.new

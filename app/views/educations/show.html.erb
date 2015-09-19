@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @education.degree %>
+</p>
+
+<p>
+  <strong>institution:</strong>
+  <%= @education.institution %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @education.desc%>
+</p>
+
+<p>
+  <strong>year</strong>
+  <%= @education.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_education_path(@education) %> |
+<%= link_to 'Delete', education_path(@education), method: :delete %> |
+<%= link_to 'Back', educations_path %>

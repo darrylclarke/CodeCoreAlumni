@@ -1,0 +1,12 @@
+<% @user.experiences.each do |e| %>
+<b><%=  e.job_title %></b><br>
+    <%= e.company %><br>
+    <%# e.company_url %>
+    <%= e.description %><br>
+    <% if e.presently_working %>
+      <%= e.start_date %> - <%= e.end_date %><br>
+    <% else %>
+      <%= e.start_date %> - <%= e.end_date %><br>
+    <% end %>
+    <br>
+<% end %>

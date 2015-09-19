@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//
+
+//For Experiences
+$(document).ready(function() {
+  $(".experience-form").on('click',"div #exp-present-day-checkbox", function() {
+    var value = $(this).is(":checked");
+    $(".experience-end-date").attr("disabled",value);
+  });
+});

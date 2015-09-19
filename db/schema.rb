@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150919191734) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,9 +35,10 @@ ActiveRecord::Schema.define(version: 20150919191734) do
     t.text     "description"
     t.date     "start_date"
     t.date     "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "user_id"
+    t.boolean  "presently_working", default: false
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree

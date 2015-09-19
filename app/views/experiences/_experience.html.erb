@@ -8,11 +8,20 @@ INPUT: exp - Experience variable to display
 
 <div class="well" id="<%=dom_id(exp) %>">
   <tr>
-    <td><%= format_date(exp.start_date) %>-<%= format_date(exp.start_date) %></td>
-    <td><%= exp.job_title %> @ <%= exp.company %></td>
+    <% if exp.presently_working%>
+      <td><%= format_month_year(exp.start_date) %> - Present</td>
+    <% else %>
+      <td><%= format_month_year(exp.start_date) %> - <%= format_month_year(exp.end_date) %></td>
+    <% end %>
+    <td><%= exp.job_title %></td>
+    <% if exp.company_url.nil? %>
+      <td><%= exp.company %></td>
+    <% else %>
+      <td><%= link_to exp.company, "http://www.google.com"  %></td>
+    <% end %>
   </tr>
   <tr>
     <td></td>
-    <td><%= exp.description %></td>
+    <td colspan=2><%= exp.description %></td>
   </tr>
 </div>

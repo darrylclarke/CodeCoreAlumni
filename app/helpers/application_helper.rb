@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   # This only formats MM-YYYY
-  def format_month_date_
+  def format_month_year(date)
     date.strftime("%Y-%b")
   end
 

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -30,9 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor', group: :production
-
-gem 'cowsay'
-gem 'faker'
+gem 'simple_form'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'cancancan'
@@ -41,13 +39,17 @@ gem 'delayed_job_web'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem "bootstrap-sass"
+gem "simple_form"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'cowsay'
+  gem 'faker'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

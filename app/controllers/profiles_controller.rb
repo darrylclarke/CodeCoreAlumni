@@ -12,12 +12,11 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(profile_params)
+    @profile = Profile.new(profile_params)
     @profile.user = current_user
-
     respond_to do |format|
       if @profile.save
-        format.html{ redirect_to profiles_path(@profile), notice: "Profile created!" }
+        format.html{ redirect_to @profile, notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
         format.html { :new }

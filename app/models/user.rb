@@ -16,12 +16,4 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def liked_question?(question)
-    liked_questions.include?(question)
-  end
-
-  def favorited_question?(question)
-    favorited_questions.include?(question)
-  end
-
 end

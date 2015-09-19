@@ -61,11 +61,14 @@ ActiveRecord::Schema.define(version: 20150919170158) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "password_reset_token"
     t.boolean  "is_active"
     t.boolean  "is_admin"
   end
+
+  add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
 
   add_foreign_key "experiences", "users"
 end

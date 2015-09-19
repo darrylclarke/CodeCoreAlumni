@@ -16,4 +16,11 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def generate_password_reset_token!
+    update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(45))
+  end
+
+
+
+
 end

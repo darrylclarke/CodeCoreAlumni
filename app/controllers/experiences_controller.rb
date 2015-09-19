@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize!, only: [:edit, :update, :destroy]
   # GET /experiences
   # GET /experiences.json
   def index
@@ -25,6 +25,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+    @experience.user = current_user
 
     respond_to do |format|
       if @experience.save
@@ -70,5 +71,9 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       params.require(:experience).permit(:job_title, :company, :company_url, :description, :start_date, :end_date)
+    end
+
+    def authorize!
+      redirect_to root_path, alert: "Access Denied. Are you the owner of this experience?" unless current_user
     end
 end

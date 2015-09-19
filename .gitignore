@@ -14,3 +14,4 @@
 .DS_Store
 /public/uploads
 /config/initializers/app_keys.rb
+/config/initializers/setup_fog.rb

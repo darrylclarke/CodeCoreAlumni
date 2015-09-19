@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+
+  before_action :authorize!, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
   def new
@@ -58,6 +60,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:description_long, :description_short, :linkedin, :facebook, :twitter, :personal_url)
+    params.require(:profile).permit(:description_long, :description_short, :linkedin, :github, :twitter, :personal_url, :avatar, :resume)
   end
 end

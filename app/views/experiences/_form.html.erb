@@ -1,4 +1,4 @@
-<%= simple_form_for @experience, html: {class: "form-group"} do |f| %>
+<%= simple_form_for @experience, html: {class: "experience-form form-group"} do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
@@ -32,8 +32,18 @@
     <%= f.date_select :start_date, {discard_day: true }, class: "form_control" %>
   </div>
   <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date, {discard_day: true }, class: "form_control" %>
+    <table>
+      <td>
+        <%= f.label :end_date %><br>
+        <%= f.date_select :end_date, {discard_day: true }, class: "experience-end-date form_control" %>
+      </td>
+      <td>OR
+      </td>
+      <td>
+        <%= f.label :presently_working  %>
+        <%= f.check_box :presently_working, id: "exp-present-day-checkbox", class: "form_control" %>
+      </td>
+    </table>
   </div>
   <div class="actions">
     <%= f.submit %>

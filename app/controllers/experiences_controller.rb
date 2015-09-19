@@ -26,7 +26,6 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     @experience.user = current_user
-
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
@@ -70,7 +69,7 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:job_title, :company, :company_url, :description, :start_date, :end_date)
+      params.require(:experience).permit(:job_title, :company, :company_url, :description, :start_date, :end_date, :presently_working)
     end
 
     def authorize!

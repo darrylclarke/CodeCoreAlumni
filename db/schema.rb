@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919021014) do
+ActiveRecord::Schema.define(version: 20150919005829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,20 @@ ActiveRecord::Schema.define(version: 20150919021014) do
     t.integer  "profile_id"
   end
 
-<<<<<<< HEAD
   add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
 
+  create_table "experiences", force: :cascade do |t|
+    t.string   "job_title"
+    t.string   "company"
+    t.text     "company_url"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   add_foreign_key "users", "profiles"
-=======
->>>>>>> 466f6b5... navbar
+
+
 end

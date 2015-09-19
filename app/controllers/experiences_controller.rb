@@ -1,7 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   before_action :authorize!, only: [:edit, :update, :destroy]
-
   # GET /experiences
   # GET /experiences.json
   def index
@@ -74,7 +73,7 @@ class ExperiencesController < ApplicationController
       params.require(:experience).permit(:job_title, :company, :company_url, :description, :start_date, :end_date)
     end
 
-    def authorize! 
-      redirect_to root_path, alert: "Access Denied. Are you the owner of this experience?" unless current_user == @experience.user
+    def authorize!
+      redirect_to root_path, alert: "Access Denied. Are you the owner of this experience?" unless current_user
     end
 end

@@ -65,15 +65,7 @@ ActiveRecord::Schema.define(version: 20150919005829) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "github_url"
-    t.string   "direct_url"
-    t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   add_foreign_key "users", "profiles"
+
+
 end

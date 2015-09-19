@@ -1,0 +1,56 @@
+<div class="col-md-10 col-md-offset-1">
+<div class="col-md-4">
+<%= image_tag @profile.avatar.url(:large) %>
+</div>
+
+<div class="col-md-8">
+<h1><%= @user.full_name%></h1>
+<%= Faker::Lorem.paragraph %>
+<%= Faker::Lorem.paragraph %>
+<%= Faker::Lorem.paragraph %>
+</div>
+<div class="col-md-8">
+  <%= fa_icon "home", class: "big-icon"%>
+  <%= fa_icon "twitter-square", class: "big-icon"%>
+  <%= fa_icon "github-square", class: "big-icon"%>
+  <%= fa_icon "linkedin-square", class: "big-icon"%>
+</div>
+</div>
+
+  <div class="col-md-10 col-md-offset-1">
+
+  <div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+      <li role="presentation" class="active"><a href="#skills" aria-controls="home" role="tab" data-toggle="tab">Skills</a></li>
+      <li role="presentation"><a href="#education" aria-controls="tasks" role="tab" data-toggle="tab">Education</a></li>
+      <li role="presentation"><a href="#experiences" aria-controls="tasks" role="tab" data-toggle="tab">Experiences</a></li>
+      <li role="presentation"><a href="#projects" aria-controls="edit" role="tab" data-toggle="tab">Projects</a></li>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="skills">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "skills" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="education">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "education" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="experiences">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "experience" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="projects">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "projects" %>
+        </div>
+      </div>
+    </div>
+  </div>

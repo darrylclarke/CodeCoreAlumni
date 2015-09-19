@@ -38,6 +38,10 @@ gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'carrierwave'
+gem "mini_magick"
+gem "bootstrap-sass"
+gem "simple_form"
 
 gem "bootstrap-sass"
 gem "simple_form"

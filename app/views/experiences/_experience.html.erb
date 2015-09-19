@@ -1,0 +1,18 @@
+<!--
+  This file is a  partial that displays a single experience entry
+PREREQ: Wrapping view must loop, and start a table.
+        Table should have 2 columns: START and END dates | Job Position
+        Each Entry is 2 rows.                            | Description
+INPUT: exp - Experience variable to display
+-->
+
+<div class="well" id="<%=dom_id(exp) %>">
+  <tr>
+    <td><%= format_date(exp.start_date) %>-<%= format_date(exp.start_date) %></td>
+    <td><%= exp.job_title %> @ <%= exp.company %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= exp.description %></td>
+  </tr>
+</div>

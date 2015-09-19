@@ -1,0 +1,42 @@
+
+<h1 class="text-center"><%= current_user.full_name%></h1>
+
+<div class="row">
+
+  <div class="col-md-10 col-md-offset-1">
+
+  <div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+      <li role="presentation" class="active"><a href="#profile" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+      <li role="presentation"><a href="#projects" aria-controls="tasks" role="tab" data-toggle="tab">Projects</a></li>
+      <li role="presentation"><a href="#experiences" aria-controls="tasks" role="tab" data-toggle="tab">Experiences</a></li>
+      <li role="presentation"><a href="#education" aria-controls="edit" role="tab" data-toggle="tab">Education</a></li>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="profile">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "profiles/form" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="projects">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "projects/form" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="experiences">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "experiences/form" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="education">
+        <div class="col-md-6 col-md-offset-2">
+          <%= render "educations/form" %>
+        </div>
+      </div>
+    </div>
+  </div>

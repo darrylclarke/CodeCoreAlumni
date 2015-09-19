@@ -38,7 +38,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.3)
-    autoprefixer-rails (6.0.1)
+    autoprefixer-rails (6.0.3)
       execjs
       json
     awesome_print (1.6.1)
@@ -156,6 +156,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+      json (~> 1.4)
     ruby-graphviz (1.2.2)
     sass (3.4.18)
     sass-rails (5.0.4)

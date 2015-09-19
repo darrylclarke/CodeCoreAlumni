@@ -13,7 +13,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor', group: :production
 gem 'kaminari'
 gem 'font-awesome-rails'
-gem 'cancancan'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'carrierwave'

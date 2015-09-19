@@ -52,7 +52,10 @@ ActiveRecord::Schema.define(version: 20150919021014) do
     t.integer  "profile_id"
   end
 
+<<<<<<< HEAD
   add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
 
   add_foreign_key "users", "profiles"
+=======
+>>>>>>> 466f6b5... navbar
 end

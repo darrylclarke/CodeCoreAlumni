@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20150919170158) do
     t.date     "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.text     "description_long"
@@ -64,4 +67,5 @@ ActiveRecord::Schema.define(version: 20150919170158) do
     t.boolean  "is_admin"
   end
 
+  add_foreign_key "experiences", "users"
 end

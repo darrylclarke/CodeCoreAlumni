@@ -1,4 +1,4 @@
-<%= form_for(@experience) do |f| %>
+<%= simple_form_for @experience, html: {class: "form-group"} do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= f.label :job_title %><br>
-    <%= f.text_field :job_title %>
+    <%= f.text_field :job_title, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :company %><br>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :company_url %><br>
-    <%= f.text_area :company_url %>
+    <%= f.label :company_url, "Company URL"%><br>
+    <%= f.text_area :company_url , class: "form_control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form_control" %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date, {discard_day: true }, class: "form_control" %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
+    <%= f.date_select :end_date, {discard_day: true }, class: "form_control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

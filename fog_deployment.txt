@@ -1,6 +1,10 @@
 
 FOG is currently configured for Google Cloud.
 It is disabled by default, since I don't know how I'm going to share credentials.
+NOTES:
+config/local_env.yml defines a FOG_CREDENTIAL environment variable.
+The value of FOG_CREDENTIAL is the name of the credential set in ~/.fog
+  (in case you have multiple credentials for different projects)
 
 Steps to enable fog:
 1) In config/initializers/, copy setup_fog.rb.example to setup_fog.rb

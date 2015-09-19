@@ -14,7 +14,7 @@ class PasswordResetsController < ApplicationController
 	   if @user = User.find_by(password_reset_token: params[:id])
 
 	   else
-	      render file: ‘public/404.html’, ststus: :not_found
+	      render file: ‘public/404.html’, status: :not_found
      end
   end
 
@@ -25,7 +25,7 @@ class PasswordResetsController < ApplicationController
 			session[:user_id] = @user.id
 		  redirect_to root_path, notice: "Password Changed!  😊 "
    else
-	    flash[:alert] = "Reset token can't be verified  😕 "
+	    redirect_to :back, alert: "Please try again, maybe you typed different passwords  😕 "
    end
   end
 

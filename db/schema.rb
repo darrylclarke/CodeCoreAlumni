@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919191734) do
+
+ActiveRecord::Schema.define(version: 20150919202428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150919191734) do
     t.text     "description_long"
     t.string   "description_short"
     t.text     "linkedin"
+    t.text     "facebook"
     t.text     "twitter"
     t.text     "personal_url"
     t.datetime "created_at",        null: false
@@ -84,16 +86,15 @@ ActiveRecord::Schema.define(version: 20150919191734) do
     t.string   "password_digest"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "password_reset_token"
     t.boolean  "is_active"
     t.boolean  "is_admin"
+    t.string   "password_reset_token"
   end
 
   add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
 
   add_foreign_key "educations", "users"
   add_foreign_key "experiences", "users"
-  add_foreign_key "projects", "users"
   add_foreign_key "profiles", "users"
-
+  add_foreign_key "projects", "users"
 end

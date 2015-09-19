@@ -12,4 +12,5 @@
 !/log/.keep
 /tmp
 .DS_Store
+/public/uploads
 /config/initializers/app_keys.rb

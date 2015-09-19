@@ -6,6 +6,9 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @project = Project.new
+    @education = Education.new
+    @experience = Experience.new
   end
 
   def create

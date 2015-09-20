@@ -1,13 +1,11 @@
-<button type="button" id="modal-button" class="right btn btn-default btn-xs" data-toggle="modal" data-target="#addproject">Add Project</button>
-
+<button type="button" id="modal-button" class="right btn btn-success btn-s" data-toggle="modal" data-target="#addproject">Add Project</button>
+<br>
+<hr>
 <div id="project-list">
   <% @user.projects.each do |p| %>
-
     <%= render "projects/project", {p: p} %>
-
   <% end %>
 </div>
-
 <div class="modal fade" id="addproject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

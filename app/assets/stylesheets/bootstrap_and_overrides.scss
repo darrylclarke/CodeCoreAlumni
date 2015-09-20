@@ -25,6 +25,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+  color: #CB0D0F;
+}
+
 @media screen and (max-width: 768px) {
   .container {
       max-width: 500px;

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if verify_recaptcha(:model => @user, :message => "Oh! It's error with reCAPTCHA!") && @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to new_session_path, notice: "Account Created"
     else
       render :new
       # flash[:alert] = @user.errors
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
    @user = current_user
     if @user.authenticate(params[:user][:current_password])
       if @user.update user_params
-        redirect_to edit_users_path, notice: "Profile updated"
+        redirect_to edit_users_path, notice: "Account updated"
       else
         flash[:alert] = "See errors below"
         render :edit

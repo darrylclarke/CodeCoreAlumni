@@ -25,7 +25,7 @@ NUM_ACTIVE_USERS = 25
 NUM_ACTIVE_USERS.times do
   first_name  = Faker::Name.first_name
   last_name   = Faker::Name.last_name
-  email       = Faker::Internet.email
+  email       = first_name + "@codecore.ca"
   password    = first_name
   is_active   = true
   is_admin    = false

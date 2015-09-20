@@ -25,6 +25,8 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+    Rails.logger.debug("inside Experiences#create")
+    Rails.logger.debug(experience_params)
     @experience.user = current_user
     respond_to do |format|
       if @experience.save

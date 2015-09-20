@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
 
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Signed in successfully"
+      if admin?
+        redirect_to admin_index_path, notice: "Welcome back, master."
+      else
+        redirect_to root_path, notice: "Signed in successfully"
+      end
     else
       flash[:alert] = "Wrong crenditials"
       render :new

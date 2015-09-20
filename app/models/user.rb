@@ -19,4 +19,18 @@ class User < ActiveRecord::Base
   def generate_password_reset_token!
     update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(45))
   end
+
+  def self.pending_user_list
+    where(is_active: false)
+  end
+  def self.active_user_list
+    where(is_active: true)
+  end
+  def self.admin_user_list
+    where(is_admin: true)
+  end
+  def self.not_admin_user_list
+    where(is_admin: false)
+  end
+
 end

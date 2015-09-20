@@ -22,19 +22,27 @@
       <p><%= @profile.description_short %></p>
       <hr>
       <p><%= @profile.description_long %></p>
-      <h3> Social Links: </h3>
+      <h3>Skills: </h3>
+      <div class="skills color-info">Ruby</div>
+      <div class="skills color-info">Rails</div>
+      <div class="skills color-info">HMTL</div>
+      <div class="skills color-info">CSS</div>
+      <div class="skills color-info">JavaScript</div>
+      <div class="skills color-info">Jquery</div>
+      <div class="skills color-info">Ajax</div>
       <hr>
+      <h3> Social Links: </h3>
       <% if @profile.github? %>
-        <%= link_to fa_icon("github-square"), @profile.github, class:"btn btn-social btn-facebook"%>
+        <%= link_to fa_icon("github") + " Github", @profile.github, class:"btn btn-social btn-facebook"%>
       <% end %>
       <% if @profile.linkedin? %>
-        <%= link_to fa_icon("linkedin-square"), @profile.linkedin, class:"btn btn-social btn-linkedin"%>
+        <%= link_to fa_icon("linkedin") + " Linkedin", @profile.linkedin, class:"btn btn-social btn-linkedin"%>
       <% end %>
       <% if @profile.twitter? %>
-        <%= link_to fa_icon("twitter-square"), @profile.twitter, class:"btn btn-social btn-facebook"%>
+        <%= link_to fa_icon("twitter") + " Twitter", @profile.twitter, class:"btn btn-social btn-facebook"%>
       <% end %>
       <% if @profile.personal_url? %>
-        <%= link_to fa_icon("external-link"), @profile.personal_url, class:"btn btn-social btn-facebook"%>
+        <%= link_to fa_icon("external-link") + "Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
       <% end %>
     </div>
   </div>
@@ -43,11 +51,13 @@
 <br>
 <div class="container">
   <div class="row">
-    <ul class="nav nav-pills" role="tablist">
-      <li role="presentation" class="active"><a href="#skills" aria-controls="home" role="tab" data-toggle="tab">Skills</a></li>
-      <li role="presentation"><a href="#education" aria-controls="tasks" role="tab" data-toggle="tab">Education</a></li>
-      <li role="presentation"><a href="#experiences" aria-controls="tasks" role="tab" data-toggle="tab">Experiences</a></li>
-      <li role="presentation"><a href="#projects" aria-controls="edit" role="tab" data-toggle="tab">Projects</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#education" aria-controls="tasks" role="tab" data-toggle="tab"><i class="fa fa-certificate"></i>
+ Education</a></li>
+      <li role="presentation"><a href="#experiences" aria-controls="tasks" role="tab" data-toggle="tab"><i class="fa fa-users"></i>
+ Experiences</a></li>
+      <li role="presentation"><a href="#projects" aria-controls="edit" role="tab" data-toggle="tab"><i class="fa fa-file-text"></i>
+ Projects</a></li>
       </li>
     </ul>
   </div>
@@ -55,14 +65,11 @@
 <div class="container">
   <div class="row">
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="skills">
-        <%= render "skills" %>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="education">
+      <div role="tabpanel" class="tab-pane active" id="education">
         <%= render "education" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="experiences">
-        <%= render "experience" %>
+        <%= render "front_experience" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="projects">
         <%= render "projects" %>

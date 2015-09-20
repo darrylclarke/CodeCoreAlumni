@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default navbar-fixed-top header masthead clearfix sub">
+  <nav class="navbar navbar-default navbar-fixed-top header masthead ">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -43,11 +43,46 @@
         </ul>
       </div>
     </div>
-
-
 </nav>
-<div id="extra-padding">
-</div>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="https://images.unsplash.com/photo-1436377734980-0ee004df570b?q=80&fm=jpg&s=c9ea8b92dae4ce8f61f616fb44ae003e" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://codecore.com/assets/hand-typing-on-keyboard-3d91ca3b7f3d20a4b7a2c2c525809139.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://codecore.com/assets/hand-typing-on-keyboard-3d91ca3b7f3d20a4b7a2c2c525809139.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+
 
 <% if flash[:notice] %>
       <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
@@ -56,5 +91,71 @@
     <% end %>
 <%= yield %>
 
-</body>
-</html>
+<footer id="mastfoot" class="mastfoot">
+<!-- inner-section : starts -->
+<section class="inner-section footer-bottom">
+<!-- container : starts -->
+<section class="container">
+<div class="row">
+<article class="col-md-6 text-left">
+<ul class="footer-social">
+<li>
+<a href="http://twitter.com/CodeCoreYVR">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/twitter.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<!-- <li><a href="#"><img title="" alt="CodeCore"   src="images/footer/skype.png"/></a></li> -->
+<li>
+<a href="http://www.facebook.com/pages/Codecore-Bootcamp/1407977206086598">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/facebook.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://linkedin.com/company/codecore-bootcamp">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/linkedin.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://pinterest.com/codecoreyvr">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/pinterest.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://instagram.com/codecorebootcamp">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/instagram.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://plus.google.com/116007489763415648305/about">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/googleplus.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://github.com/orgs/CodeCoreYVR">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/github.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+<li>
+<a href="http://www.youtube.com/user/CodeCoreYVR">
+<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/youtube.png" class="footer-icon" alt="CodeCore">
+</a>
+</li>
+</ul>
+</article>
+<article class="col-md-6 text-right">
+<div class="credits">
+<p>
+142 W Hastings St. // Vancouver, BC // Canada //  (604) 559-CODE (2633)
+<br>
+<img src="http://codecore.com/assets/codecore-footer-pctia-bbb-aaaad46b3bddbd381dac3f4c4c15e34e.png" alt="Codecore footer pctia bbb">
+</p>
+</div>
+</article>
+<article class="col-md-6 text-right">
+
+</article>
+</div>
+</section>
+</section>
+<!-- inner-section : ends -->
+</footer>

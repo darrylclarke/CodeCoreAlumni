@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 20150919222744) do
     t.string   "password_digest"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "password_reset_token"
     t.boolean  "is_active"
     t.boolean  "is_admin"
+    t.string   "password_reset_token"
   end
 
   add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree

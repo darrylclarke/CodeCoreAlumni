@@ -6,8 +6,13 @@ $navbar-default-border: #CB0D0F;
 @import "bootstrap";
 @import "font-awesome";
 
+
 .big-icon {
   font-size: 50px;
+
+body {
+    margin-top: 80px !important;
+    font-family: "ProximaNova-Light","Helvetica",sans-serif !important;
 }
 
 #logo {
@@ -20,6 +25,80 @@ $navbar-default-border: #CB0D0F;
 #extra-padding {
   margin-top: 100px;
 }
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+display: block;
+max-height: 400px !important;
+line-height: 1;
+width: 100%;
+}
+
+.container-thumb{
+    width: 100%;
+    padding:20px;
+    background-color: #505050;
+    white-space:nowrap;
+    overflow-x:auto;
+}
+
+.box{
+    width:220px;
+    height:auto;
+    margin:10px;
+    display:inline-block;
+}
+
+.middle_section {
+  margin-top: 60px;
+}
+
+.citation-quote {
+    font-family: "ProximaNova-Light","Helvetica",sans-serif;
+    font-size: 30px;
+    line-height: 40px
+}
+
+.source {
+  font-family: "ProximaNova-Light","Helvetica",sans-serif;
+  font-size: 15px;
+}
+
+.fa {
+font-size: 70px;
+}
+
+p {
+    font-size: 18px !important;
+    line-height: 26px !important;
+    margin-bottom: 1em !important;
+}
+
+.middle_p {
+  color: #fff;
+}
+
+.red_block{
+  padding-top:40px;
+  padding-bottom:40px;
+  background-color: #CB0D0F;
+  color: #fff;
+}
+
+#mastfoot {
+  background-color: #fff !important;
+  border: 0 !important;
+  padding-top: 40px;
+}
+
+p.credits {
+  font-family: "Open Sans",Verdana,Helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 19px;
+}
+
+
+
 
 /*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome

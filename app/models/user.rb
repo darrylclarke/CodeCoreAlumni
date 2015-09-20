@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 
-  apply_simple_captcha :message => "The secret Image and code were different", :add_to_base => true
   has_secure_password
   has_one :profile
   has_many :projects, dependent: :destroy

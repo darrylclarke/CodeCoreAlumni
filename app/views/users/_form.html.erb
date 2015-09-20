@@ -8,7 +8,7 @@
   <% end %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
-    <%= f.simple_captcha(:object => 'user', :label => "Enter numbers..", :message => "The secret Image and code were different") %>
+    <%= recaptcha_tags %>
   <div class="form-group">
     <%= f.submit  class: "btn btn-primary" %>
   </div>

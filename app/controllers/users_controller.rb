@@ -6,12 +6,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if @user.save_with_captcha
+    if verify_recaptcha(:model => @user, :message => "Oh! It's error with reCAPTCHA!") && @user.save
       session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
-      flash[:alert] = @user.errors.full_messages.to_sentence
+      # flash[:alert] = @user.errors
     end
   end
 

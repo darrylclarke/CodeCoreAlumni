@@ -19,9 +19,9 @@ gem 'carrierwave'
 gem "mini_magick"
 gem "bootstrap-sass"
 gem "simple_form"
-gem 'simple_captcha2', require: 'simple_captcha'
 gem "letter_opener", :group => :development
 gem 'fog'
+gem "recaptcha", :require => "recaptcha/rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

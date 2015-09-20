@@ -24,13 +24,14 @@ $(document).ready(function() {
     $(".experience-end-date").attr("disabled",value);
   });
  
-  //For admin
+  //==========================admin=======================================
+  //-------------Active Users---------------------------------------------
   $("#pending-user-list").on('click',"tbody tr td .user-state-btn", function() {
     event.preventDefault();
     target_id = $(this).parent().parent().attr("id").split("_")[1];
     current_activity_state = $(this).data("active-state");
-    console.log(target_id);
-    console.log(current_activity_state);
+    //console.log(target_id);
+    //console.log(current_activity_state);
     $.ajax({
       method: "PATCH",
       url: "/admin/" + target_id + ".json",
@@ -45,8 +46,8 @@ $(document).ready(function() {
     event.preventDefault();
     target_id = $(this).parent().parent().attr("id").split("_")[1];
     current_activity_state = $(this).data("active-state");
-    console.log(target_id);
-    console.log(current_activity_state);
+    //console.log(target_id);
+    //console.log(current_activity_state);
     $.ajax({
       method: "PATCH",
       url: "/admin/" + target_id + ".json",
@@ -57,6 +58,32 @@ $(document).ready(function() {
       }
     });
   });
+  //-------------Delete Users---------------------------------------------
+  $("#pending-user-list").on('click',"tbody tr td .user-delete-btn", function() {
+    event.preventDefault();
+    target_id = $(this).parent().parent().attr("id").split("_")[1];
+    $.ajax({
+      method: "DELETE",
+      url: "/admin/" + target_id + ".json",
+      success: function(response) { 
+        console.log(response); 
+        alert("We changed the status! result is " + response.result); 
+      }
+    });
+  });
+  $("#active-user-list").on('click',"tbody tr td .user-delete-btn", function() {
+    event.preventDefault();
+    target_id = $(this).parent().parent().attr("id").split("_")[1];
+    $.ajax({
+      method: "DELETE",
+      url: "/admin/" + target_id + ".json",
+      success: function(response) { 
+        console.log(response); 
+        alert("We changed the status! result is " + response.result); 
+      }
+    });
+  });
 
 
+  //==========================END admin=======================================
 });

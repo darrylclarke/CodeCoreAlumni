@@ -25,6 +25,19 @@ class AdminController < ApplicationController
       end
     end
   end
+
+  def destroy
+    respond_to do |format|
+      delete_user(params[:id])
+      format.html do
+        redirect_to admin_path, notice: "user destroyed"
+      end
+      format.json do
+        render json: {result: "ok"}
+      end
+    end
+  end
+  
   
   private
   def user_params
@@ -45,5 +58,10 @@ class AdminController < ApplicationController
     result = user.update(is_active: new_active_state)
     Rails.logger.debug("Exiting change_user_active_state()")
     return result
+  end
+  def delete_user(user_id)
+    user = User.find user_id
+    user.destroy
+    return true;
   end
 end

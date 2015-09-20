@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  apply_simple_captcha
   has_secure_password
   has_one :profile
   has_many :projects, dependent: :destroy

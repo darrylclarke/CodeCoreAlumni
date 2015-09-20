@@ -7,6 +7,7 @@
   <% end %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
+    <%= f.simple_captcha :label => "Enter numbers.." %>
   <div class="form-group">
     <%= f.submit  class: "btn btn-primary" %>
   </div>

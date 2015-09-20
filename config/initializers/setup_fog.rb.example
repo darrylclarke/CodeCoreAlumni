@@ -1,0 +1,16 @@
+CarrierWave.configure do |config|
+   config.fog_credentials = {
+     provider: 'Google',
+     google_storage_access_key_id: "ReplaceMe123someRandomKeyHere",
+     google_storage_secret_access_key: "234PutSecretAccessKeyHere"
+     # The following 3 fields are in Jeff's ~/.fog
+     #google_project: "My-First-Project",
+     #google_client_email: "replace-me-with-developer-email@developer.gserviceaccount.com",
+     #google_json_key_location: "/home/jeff/gcompute/replace_me_with_the_google_json_key_name.json",
+     # END ~/.fog content
+   }
+  # This is the Google Storage bucket
+  config.fog_directory  = 'codecore_alumni_bucket'                          # required
+  config.fog_public     = false # optional, defaults to true
+  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
+end

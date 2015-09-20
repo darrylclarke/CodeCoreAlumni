@@ -1,0 +1,5 @@
+
+# This file is used to configure settings for FOG
+# There is nothing secret in this file.
+FOG_CREDENTIAL: 'codecore_alumni_credential'
+

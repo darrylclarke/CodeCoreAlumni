@@ -65,4 +65,8 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:description_long, :description_short, :linkedin, :github, :twitter, :personal_url, :avatar, :resume)
   end
+
+  def authorize!
+    redirect_to root_path, alert: "Access Denied. Are you the owner of this experience?" unless current_user
+  end
 end

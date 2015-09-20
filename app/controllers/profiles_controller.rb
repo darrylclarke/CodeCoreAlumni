@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-
+    @user = @profile.user
     respond_to do |format|
       if @profile.update profile_params
         format.html { redirect_to profile_path(@profile), notice: "Profile updated!" }

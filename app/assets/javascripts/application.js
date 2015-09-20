@@ -14,4 +14,49 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require admin
 //= require_tree .
+
+$(document).ready(function() {
+  //For Experiences
+  $(".experience-form").on('click',"div #exp-present-day-checkbox", function() {
+    var value = $(this).is(":checked");
+    $(".experience-end-date").attr("disabled",value);
+  });
+ 
+  //For admin
+  $("#pending-user-list").on('click',"tbody tr td .user-state-btn", function() {
+    event.preventDefault();
+    target_id = $(this).parent().parent().attr("id").split("_")[1];
+    current_activity_state = $(this).data("active-state");
+    console.log(target_id);
+    console.log(current_activity_state);
+    $.ajax({
+      method: "PATCH",
+      url: "/admin/" + target_id + ".json",
+      data: {active_state: current_activity_state},
+      success: function(response) { 
+        alert("We changed the status! result is " + response.result); 
+      }
+    })
+  });
+
+  $("#active-user-list").on('click',"tbody tr td .user-state-btn", function() {
+    event.preventDefault();
+    target_id = $(this).parent().parent().attr("id").split("_")[1];
+    current_activity_state = $(this).data("active-state");
+    console.log(target_id);
+    console.log(current_activity_state);
+    $.ajax({
+      method: "PATCH",
+      url: "/admin/" + target_id + ".json",
+      data: {active_state: current_activity_state},
+      success: function(response) { 
+        console.log(response); 
+        alert("We changed the status! result is " + response.result); 
+      }
+    });
+  });
+
+
+});

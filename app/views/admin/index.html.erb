@@ -1,0 +1,66 @@
+<h1>Welcome to the Admin Panel</h1>
+
+<div class="well pending_users">
+  <%# render 'pending_users' %>
+  <h3 id="admin-message"></h3>
+  <h2>Pending User List</h2>
+  <table id="pending-user-list">
+    <thead>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @pending_users.each do |p| %>
+        <tr id="<%= dom_id(p) %>">
+          <td><%= p.full_name %></td>
+          <td><%= p.email %></td>
+          <!-- ACTIONS START -->
+          <td>
+             <!-- Need AJAX to change button setting -->
+            <% if p.is_active %>
+              <button type="button" class="btn btn-primary user-state-btn" data-active-state="true">Deactivate</button>
+            <% else %>
+              <button type="button" class="btn btn-primary user-state-btn" data-active-state="false">Activate</button>
+            <% end %>
+            <button type="button" class="btn btn-primary delete-user-btn">Delete</button>
+            <button type="button" class="btn btn-primary lock-user-btn">Lock</button>
+          </td>
+          <!-- ACTIONS END -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="well active_users">
+  <%# render 'active_users' %>
+  <h2>Active User List</h2>
+  <table id="active-user-list">
+    <thead>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @active_users.each do |p| %>
+        <tr id="<%= dom_id(p) %>">
+          <td><%= p.full_name %></td>
+          <td><%= p.email %></td>
+          <!-- ACTIONS START -->
+          <td>
+             <!-- Need AJAX to change button setting -->
+            <% if p.is_active %>
+              <button type="button" class="btn btn-primary user-state-btn" data-active-state="true">Deactivate</button>
+            <% else %>
+              <button type="button" class="btn btn-primary user-state-btn" data-active-state="false">Activate</button>
+            <% end %>
+            <button type="button" class="btn btn-primary delete-user-btn">Delete</button>
+            <button type="button" class="btn btn-primary lock-user-btn">Lock</button>
+          </td>
+          <!-- ACTIONS END -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

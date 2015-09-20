@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  apply_simple_captcha
+  apply_simple_captcha :message => "The secret Image and code were different", :add_to_base => true
   has_secure_password
   has_one :profile
   has_many :projects, dependent: :destroy
@@ -20,8 +20,4 @@ class User < ActiveRecord::Base
   def generate_password_reset_token!
     update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(45))
   end
-
-
-
-
 end

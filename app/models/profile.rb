@@ -4,6 +4,7 @@ class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   mount_uploader :resume, ResumeUploader
 
+  validates :user_id, presence: true, uniqueness: true
   validates :description_long, presence: true, length: {maximum: 500}
   validates :description_short, presence: true, length: { maximum: 140 }
 end

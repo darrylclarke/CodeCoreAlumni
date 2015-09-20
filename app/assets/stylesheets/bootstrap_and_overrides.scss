@@ -20,6 +20,11 @@ img {
     vertical-align: middle;
 }
 
+a {
+    color: #666;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
   .container {
       max-width: 500px;
@@ -209,4 +214,36 @@ font-size: 70px;
 #education.tab-pane.active {
   border: none !important ;
   padding: 10px !important;
+}
+
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #FFF;
+    background-color: #CB0D0F;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #CB0D0F;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #CB0D0F;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDD #DDD transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    cursor: default;
+}
+
+.btn:hover, .btn:focus, .btn.focus {
+    color: #CB0D0F;
+    text-decoration: none;
 }

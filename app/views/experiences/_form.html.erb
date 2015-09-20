@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
-    <%= f.date_select :start_date, {discard_day: true }, class: "form_control" %>
+    <%= f.date_select :start_date, discard_day: true, default: {day: 1}, class: "form_control" %>
   </div>
   <div class="field">
     <table>

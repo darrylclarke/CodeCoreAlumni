@@ -4,6 +4,6 @@ $('#experience-list').append("<%=  j render 'experience', {e: @experience} %>");
 $('.field textarea').each(function(){
     $(this).val("");
 });
-$('.field input').each(function(){
+$('.field input:not([type="hidden"])').each(function(){
     $(this).val("");
 });

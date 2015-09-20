@@ -22,22 +22,18 @@
       <p><%= @profile.description_long %></p>
       <h3> Social Links: </h3>
       <hr>
-      <a class="btn btn-social btn-facebook" href="#">
-        <i class="fa fa-github"></i>
-        GitHub
-      </a>
-      <a class="btn btn-social btn-twitter" href="#">
-      <i class="fa fa-twitter"></i>
-        Twitter
-      </a>
-      <a class="btn btn-social btn-linkedin" href="#">
-      <i class="fa fa-linkedin"></i>
-        Linkedin
-      </a>
-      <a class="btn btn-social btn-linkedin" href="#">
-      <i class="fa fa-external-link"></i>
-      Personal Website
-      </a>
+      <% if @profile.github? %>
+        <%= link_to fa_icon("github-square"), @profile.github, class:"btn btn-social btn-facebook"%>
+      <% end %>
+      <% if @profile.linkedin? %>
+        <%= link_to fa_icon("linkedin-square"), @profile.linkedin, class:"btn btn-social btn-linkedin"%>
+      <% end %>
+      <% if @profile.twitter? %>
+        <%= link_to fa_icon("twitter-square"), @profile.twitter, class:"btn btn-social btn-facebook"%>
+      <% end %>
+      <% if @profile.personal_url? %>
+        <%= link_to fa_icon("external-link"), @profile.personal_url, class:"btn btn-social btn-facebook"%>
+      <% end %>
     </div>
   </div>
 </div>

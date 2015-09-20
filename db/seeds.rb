@@ -55,6 +55,12 @@ NUM_INACTIVE_USERS.times do
     is_admin:   is_admin
   );
 end
+
+["Ruby", "Rails", "Javascript", "HTML", "CSS", "Git", "Github", "SQL", "jQuery",
+  "React.js", "APIs"].each do |tag|
+  Tag.create(name: tag)
+end
+
 NUM_EXPERIENCES = 50
 NUM_EXPERIENCES.times do
   # Experiences

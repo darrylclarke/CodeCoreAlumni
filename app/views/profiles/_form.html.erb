@@ -1,15 +1,5 @@
 <%= simple_form_for(@profile||=Profile.new) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
     <%= f.input :avatar %>
     <%= f.input :description_short %>
@@ -19,7 +9,11 @@
     <%= f.input :twitter, placeholder: 'www.twitter.com/**you**' %>
     <%= f.input :personal_url, placeholder: 'www.you.com' %>
     <%= f.input :resume %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.input :for_hire, input_html: { class: 'form-control' } %>
+    <br>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
 <% end %>

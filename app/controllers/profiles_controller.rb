@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
         format.html  { redirect_to @profile, notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
-        format.html   { :new }
+        format.html { render "new", flash: "Profile created!"  }
         format.json   { render json: @profile.errors, status: :unprocessable_entity}
       end
     end
@@ -64,7 +64,9 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:description_long, :description_short, :linkedin, :github, :twitter, :personal_url, :avatar, :resume)
+    params.require(:profile).permit(:description_long, :description_short, :linkedin,
+                                    :github, :twitter, :personal_url, :avatar, :resume,
+                                    :for_hire)
   end
 
   def authorize!

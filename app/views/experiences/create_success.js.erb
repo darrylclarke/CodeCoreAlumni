@@ -1,0 +1,9 @@
+$('#addexperience').modal('toggle');
+
+$('#experience-list').append("<%=  j render 'experience', {e: @experience} %>");
+$('.field textarea').each(function(){
+    $(this).val("");
+});
+$('.field input').each(function(){
+    $(this).val("");
+});

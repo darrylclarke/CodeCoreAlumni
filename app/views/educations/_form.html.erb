@@ -1,7 +1,7 @@
-<%= simple_form_for(@education) do |f| %>
+<%= simple_form_for(@education ||= Education.new) do |f| %>
   <% if @education.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@education.errors.count, "error") %> prohibited this education from being saved:</h2>
+      <h2><%= pluralize(@education.errors.count, "error") %></h2>
 
       <ul>
       <% @education.errors.full_messages.each do |message| %>

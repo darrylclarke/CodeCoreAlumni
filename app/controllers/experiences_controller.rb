@@ -29,10 +29,10 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
-        format.json { render :show, status: :created, location: @experience }
+        format.js { render :create_success }
       else
         format.html { render :new }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        format.js { render :create_failure }
       end
     end
   end

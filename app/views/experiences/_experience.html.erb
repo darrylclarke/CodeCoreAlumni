@@ -5,23 +5,14 @@ PREREQ: Wrapping view must loop, and start a table.
         Each Entry is 2 rows.                            | Description
 INPUT: exp - Experience variable to display
 -->
-
-<div class="well" id="<%=dom_id(exp) %>">
-  <tr>
-    <% if exp.presently_working%>
-      <td><%= format_month_year(exp.start_date) %> - Present</td>
+<b><%=  e.job_title %></b><br>
+    <%= e.company %><br>
+    <%= e.company_url %>
+    <%= e.description %><br>
+    <% if e.presently_working %>
+      <%= e.start_date %> - <%= e.end_date %><br>
     <% else %>
-      <td><%= format_month_year(exp.start_date) %> - <%= format_month_year(exp.end_date) %></td>
+      <%= e.start_date %> - <%= e.end_date %><br>
     <% end %>
-    <td><%= exp.job_title %></td>
-    <% if exp.company_url.nil? %>
-      <td><%= exp.company %></td>
-    <% else %>
-      <td><%= link_to exp.company, "http://www.google.com"  %></td>
-    <% end %>
-  </tr>
-  <tr>
-    <td></td>
-    <td colspan=2><%= exp.description %></td>
-  </tr>
-</div>
+    <span class="right"><%= link_to "Edit", edit_experience_path(e) %>
+    <%= link_to "Delete", experience_path(e), method: :delete %></span>

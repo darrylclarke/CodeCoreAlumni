@@ -186,7 +186,7 @@ font-size: 70px;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
-    
+
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
@@ -201,4 +201,12 @@ font-size: 70px;
     color: #FFF;
     background-color: #5BC0DE;
     border-color: #46B8DA;
+}
+
+#profile.tab-pane.active,
+#projects.tab-pane.active,
+#experiences.tab-pane.active,
+#education.tab-pane.active {
+  border: none !important ;
+  padding: 10px !important;
 }

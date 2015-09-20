@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @user = current_user
     @profile = Profile.new
     @project = Project.new
     @education = Education.new
@@ -16,10 +17,10 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
     respond_to do |format|
       if @profile.save
-        format.html{ redirect_to @profile, notice: "Profile created!" }
+        format.html  { redirect_to @profile, notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
-        format.html { :new }
+        format.html   { :new }
         format.json   { render json: @profile.errors, status: :unprocessable_entity}
       end
     end

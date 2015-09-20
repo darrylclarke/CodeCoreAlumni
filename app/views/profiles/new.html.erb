@@ -1,44 +1,44 @@
-<h1 class="text-center"><%= current_user.full_name%></h1>
-
-<div class="row">
-
-  <div class="col-md-10 col-md-offset-1">
-
-    <div class="col-md-2">
-      <ul class="nav nav-pills nav-stacked" role="tablist">
-        <li role="presentation" class="active"><a href="#profile" role="tab" data-toggle="tab">About</a></li>
-        <li role="presentation"><a href="#projects" role="tab" data-toggle="tab">Projects</a></li>
-        <li role="presentation"><a href="#experiences" role="tab" data-toggle="tab">Experiences</a></li>
-        <li role="presentation"><a href="#education" role="tab" data-toggle="tab">Education</a></li>
-        </li>
-        <li role="presentation"><a data-toggle="modal" data-target="#somethinghere" role="tab">Preview Profile</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-md-10">
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="profile">
-          <div class="col-md-6 col-md-offset-2">
-            <%= render "profiles/form" %>
+<div class="container middle_section">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h2>Edit Your Profile</h2>
+      </div>
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+          <li role="presentation" class="active"><a href="#profile" role="tab" data-toggle="tab">About</a></li>
+          <li role="presentation"><a href="#projects" role="tab" data-toggle="tab">Projects</a></li>
+          <li role="presentation"><a href="#experiences" role="tab" data-toggle="tab">Experiences</a></li>
+          <li role="presentation"><a href="#education" role="tab" data-toggle="tab">Education</a></li>
+          </li>
+          <li role="presentation"><a data-toggle="modal" data-target="#somethinghere" role="tab">Preview Profile</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="profile">
+            <div class="col-md-12">
+              <%= render "profiles/form" %>
+            </div>
           </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="projects">
-          <div class="col-md-6 col-md-offset-2">
-            <%= render "project" %>
+          <div role="tabpanel" class="tab-pane" id="projects">
+            <div class="col-md-12">
+              <%= render "project" %>
+            </div>
           </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="experiences">
-          <div class="col-md-6 col-md-offset-2">
-            <%= render "experience" %>
+          <div role="tabpanel" class="tab-pane" id="experiences">
+            <div class="col-md-12">
+              <%= render "experience" %>
+            </div>
           </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="education">
-          <div class="col-md-6 col-md-offset-2">
-            <%= render "education" %>
+          <div role="tabpanel" class="tab-pane" id="education">
+            <div class="col-md-12">
+              <%= render "education" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
- </div>
+  </div>
 </div>

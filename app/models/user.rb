@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_secure_password
-
+  has_one :profile
   has_many :projects, dependent: :destroy
   has_many :experiences, dependent: :destroy
   has_many :educations, dependent: :destroy

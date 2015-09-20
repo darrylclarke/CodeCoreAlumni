@@ -1,14 +1,13 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GroupProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>GroupProject</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 <body>
-
   <nav class="navbar navbar-default navbar-fixed-top header masthead ">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -21,7 +20,7 @@
         <%= link_to image_tag("logo.png", :height => 48, :class => "navbar-brand-logo main-logo") %>
       </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
 
@@ -43,83 +42,76 @@
         </ul>
       </div>
     </div>
-</nav>
+  </nav>
 
-<% if flash[:notice] %>
+  <% if flash[:notice] %>
       <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-    <% elsif flash[:alert] %>
+  <% elsif flash[:alert] %>
       <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
-    <% end %>
-<%= yield %>
-<div class="container-full">
-<footer id="mastfoot" class="mastfoot">
-<!-- inner-section : starts -->
-<section class="inner-section footer-bottom">
-<!-- container : starts -->
-<section class="container">
-<div class="row">
-<article class="col-md-6 text-left">
-<ul class="footer-social">
-<li>
-<a href="http://twitter.com/CodeCoreYVR">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/twitter.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<!-- <li><a href="#"><img title="" alt="CodeCore"   src="images/footer/skype.png"/></a></li> -->
-<li>
-<a href="http://www.facebook.com/pages/Codecore-Bootcamp/1407977206086598">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/facebook.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://linkedin.com/company/codecore-bootcamp">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/linkedin.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://pinterest.com/codecoreyvr">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/pinterest.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://instagram.com/codecorebootcamp">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/instagram.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://plus.google.com/116007489763415648305/about">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/googleplus.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://github.com/orgs/CodeCoreYVR">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/github.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-<li>
-<a href="http://www.youtube.com/user/CodeCoreYVR">
-<img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/youtube.png" class="footer-icon" alt="CodeCore">
-</a>
-</li>
-</ul>
-</article>
-<article class="col-md-6 text-right">
-<div class="credits">
-<p>
-142 W Hastings St. // Vancouver, BC // Canada //  (604) 559-CODE (2633)
-<br>
-<img src="http://codecore.com/assets/codecore-footer-pctia-bbb-aaaad46b3bddbd381dac3f4c4c15e34e.png" alt="Codecore footer pctia bbb">
-</p>
-</div>
-</article>
-<article class="col-md-6 text-right">
-
-</article>
-</div>
-</section>
-</section>
-<!-- inner-section : ends -->
-</footer>
-</div>
+  <% end %>
+  <%= yield %>
+    <footer id="mastfoot" class="mastfoot">
+      <!-- inner-section : starts -->
+      <section class="inner-section footer-bottom">
+        <!-- container : starts -->
+        <section class="container">
+          <div class="row">
+            <article class="col-md-6 text-left">
+              <ul class="footer-social">
+                <li>
+                  <a href="http://twitter.com/CodeCoreYVR">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/twitter.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <!-- <li><a href="#"><img title="" alt="CodeCore"   src="images/footer/skype.png"/></a></li> -->
+                <li>
+                  <a href="http://www.facebook.com/pages/Codecore-Bootcamp/1407977206086598">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/facebook.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://linkedin.com/company/codecore-bootcamp">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/linkedin.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://pinterest.com/codecoreyvr">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/pinterest.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://instagram.com/codecorebootcamp">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/instagram.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://plus.google.com/116007489763415648305/about">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/googleplus.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://github.com/orgs/CodeCoreYVR">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/github.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.youtube.com/user/CodeCoreYVR">
+                    <img title="" src="http://d3qliqblr8knlc.cloudfront.net/images/footer/youtube.png" class="footer-icon" alt="CodeCore">
+                  </a>
+                </li>
+              </ul>
+            </article>
+            <article class="col-md-6 text-right">
+              <div class="credits">
+                <p>142 W Hastings St. // Vancouver, BC // Canada //  (604) 559-CODE (2633)
+                  <br>
+                  <img src="http://codecore.com/assets/codecore-footer-pctia-bbb-aaaad46b3bddbd381dac3f4c4c15e34e.png" alt="Codecore footer pctia bbb">
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </footer>
 </body>
 </html>

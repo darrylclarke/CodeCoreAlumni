@@ -15,7 +15,7 @@
         <h1 class="modal-title" id="myModalLabel">New Project</h1>
       <div class="modal-body">
         <div id="project-errors" class="red"></div>
-        <%= simple_form_for (@project ||= Project.new), html: {class: "project-form form-group"}, remote: true do |f| %>
+        <%= simple_form_for (@project = Project.new), html: {class: "project-form form-group"}, remote: true do |f| %>
 
             <%= f.input :title %>
             <%= f.input :description %>

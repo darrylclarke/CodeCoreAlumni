@@ -18,10 +18,10 @@ class EducationsController < ApplicationController
     respond_to do |format|
       if @education.save
         format.html { redirect_to @education, notice: 'Education was successfully created.' }
-        format.json { render :show, status: :created, location: @education }
+        format.js { render :create_success }
       else
         format.html { render :new }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
+        format.js { render :create_failure }
       end
     end
   end

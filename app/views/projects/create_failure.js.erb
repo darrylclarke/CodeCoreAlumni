@@ -1,0 +1,5 @@
+$('#project-errors').html("");
+
+<% @project.errors.full_messages.each do |msg| %>
+$('#project-errors').append("<p>* <%= msg %></p>");
+<% end %>

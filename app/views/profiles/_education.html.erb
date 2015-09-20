@@ -1,13 +1,11 @@
-<button type="button" id="modal-button" class="right btn btn-default btn-xs" data-toggle="modal" data-target="#addeducation">Add Education</button>
-
+<button type="button" id="modal-button" class="right btn btn-success btn-s" data-toggle="modal" data-target="#addeducation">Add Education</button>
+<br>
+<hr>
 <div id="education-list">
   <% @user.educations.each do |e| %>
-
     <%= render "educations/education", {e: e} %>
-
   <% end %>
 </div>
-
 <div class="modal fade" id="addeducation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

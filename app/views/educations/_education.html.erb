@@ -1,6 +1,8 @@
-<b><%=  e.institution %></b><br>
-    <%= e.degree %><br>
-    <%= e.desc %><br>
-    <%= e.year %><br>
-    <span class="right"><%= link_to "Edit", edit_education_path(e) %>
-    <%= link_to "Delete", education_path(e), method: :delete %></span>
+<b>Institution:</b> <%=  e.institution %><br>
+<b>Degree:</b> <%= e.degree %><br>
+<b>Description:</b> <%= e.desc %><br>
+<b>Graduated Year:</b><%= e.year %><br>
+<span class="right"><%= link_to "Edit", edit_education_path(e) %> |
+ <%= link_to "Delete", education_path(e), method: :delete %></span>
+<hr>
+<br>

@@ -13,7 +13,8 @@
         <button type="button" class="btn btn-success btn-lg">Download Resume</button>
         <% end %>
         <br><br>
-        <button type="button" class="btn btn-danger btn-lg">Contact Me</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg">Contact Me</button> -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contactMe">Contact Me</button>
       </div>
     </div>
     <div class="col-md-1 col-sm-1">
@@ -77,3 +78,5 @@
     </div>
   </div>
 </div>
+
+<%= render partial: "contacts/contact_model", locals: {user: @user, profile: @profile} %>

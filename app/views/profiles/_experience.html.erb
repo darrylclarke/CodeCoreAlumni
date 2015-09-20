@@ -1,10 +1,12 @@
 <button type="button" id="modal-button" class="right btn btn-default btn-xs" data-toggle="modal" data-target="#addexperience">Add Experience</button>
 
 <div id="experience-list">
+  <% if @user && @user.experiences.any? %>
   <% @user.experiences.each do |e| %>
 
     <%= render "experiences/experience", {e: e} %>
 
+  <% end %>
   <% end %>
 </div>
 

@@ -44,45 +44,6 @@
       </div>
     </div>
 </nav>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="https://images.unsplash.com/photo-1436377734980-0ee004df570b?q=80&fm=jpg&s=c9ea8b92dae4ce8f61f616fb44ae003e" alt="...">
-      <div class="carousel-caption">
-          <h3>Caption Text</h3>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://codecore.com/assets/hand-typing-on-keyboard-3d91ca3b7f3d20a4b7a2c2c525809139.jpg" alt="...">
-      <div class="carousel-caption">
-          <h3>Caption Text</h3>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://codecore.com/assets/hand-typing-on-keyboard-3d91ca3b7f3d20a4b7a2c2c525809139.jpg" alt="...">
-      <div class="carousel-caption">
-          <h3>Caption Text</h3>
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div> <!-- Carousel -->
-
 
 <% if flash[:notice] %>
       <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
@@ -90,7 +51,7 @@
       <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
     <% end %>
 <%= yield %>
-
+<div class="container-full">
 <footer id="mastfoot" class="mastfoot">
 <!-- inner-section : starts -->
 <section class="inner-section footer-bottom">
@@ -159,3 +120,6 @@
 </section>
 <!-- inner-section : ends -->
 </footer>
+</div>
+</body>
+</html>

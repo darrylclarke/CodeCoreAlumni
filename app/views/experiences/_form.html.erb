@@ -1,7 +1,7 @@
-<%= simple_form_for @experience, html: {class: "experience-form form-group"} do |f| %>
+<%= simple_form_for (@experience ||= Experience.new), html: {class: "experience-form form-group"} do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+      <h2><%= pluralize(@experience.errors.count, "error") %></h2>
 
       <ul>
       <% @experience.errors.full_messages.each do |message| %>

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     patch :update, on: :collection
 
   end
+  
+  match '/contact/:user_id',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:create]
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'

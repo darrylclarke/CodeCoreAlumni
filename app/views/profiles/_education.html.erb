@@ -1,3 +1,4 @@
+
 <button type="button" id="modal-button" class="right btn btn-default btn-xs" data-toggle="modal" data-target="#addeducation">Add Education</button>
 
 <div id="education-list">
@@ -25,5 +26,20 @@
         <% end %>
       </div>
     </div>
+
+<div class="profile-container">
+  <div class="row">
+    <% if @user.educations.count > 0 %>
+      <% @user.educations.each do |e| %>
+        <b>Institution:</b> <%= e.institution %> &nbsp;-&nbsp;
+        <b>Year:</b> <%= e.year %> &nbsp;-&nbsp;
+        <b>Degree:</b> <%= e.degree %><br><br>
+        <p><%= e.desc %><p/>
+        <hr>
+      <% end %>
+    <%else %>
+      <h3>No Educaiton Entered</h3>
+    <% end %>
+
   </div>
 </div>

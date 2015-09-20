@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
         format.html { redirect_to profile_path(@profile), notice: "Profile updated!" }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { :edit }
+        format.html { render :new }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end

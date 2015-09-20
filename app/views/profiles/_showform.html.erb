@@ -4,7 +4,7 @@
   </div>
 
   <div class="col-md-8">
-    <h1><%= @user.full_name %></h1>
+    <h1><%= @user ? @user.full_name : "YOU NEED TO SET @user TO SOMETHING" %></h1>
     <%= Faker::Lorem.paragraph %>
     <%= Faker::Lorem.paragraph %>
     <%= Faker::Lorem.paragraph %>

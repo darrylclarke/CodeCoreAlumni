@@ -3,10 +3,10 @@ DESCRIPTION: Renders 1 row in the admin panel
 INPUT: User 
 -->
 <tr id="<%= dom_id(user) %>">
-  <td><%= user.full_name %></td>
-  <td><%= user.email %></td>
+  <td class="user-full-name"><%= user.full_name %></td>
+  <td class="user-email"><%= user.email %></td>
   <!-- ACTIONS START -->
-  <td>
+  <td class="user-actions">
      <!-- Need AJAX to change button setting -->
     <% if user.is_active %>
       <button type="button" class="btn btn-primary user-state-btn" data-active-state="true">Deactivate</button>

@@ -18,7 +18,7 @@ class AdminController < ApplicationController
          #end
          format.json do
            Rails.logger.debug("JSON OK") 
-           render json: {result: "ok"}
+           render json: {id: params[:id], result: "ok"}
          end 
       else
          Rails.logger.debug("The update failed")
@@ -33,7 +33,7 @@ class AdminController < ApplicationController
         redirect_to admin_path, notice: "user destroyed"
       end
       format.json do
-        render json: {result: "ok"}
+        render json: { id: params[:id], result: "ok" }
       end
     end
   end

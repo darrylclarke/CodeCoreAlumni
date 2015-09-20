@@ -1,0 +1,6 @@
+$('#addeducation').modal('toggle');
+
+$('#education-list').append("<%=  j render 'education', {e: @education} %>");
+$('#addeducation input').each(function(){
+    $(this).val("");
+});

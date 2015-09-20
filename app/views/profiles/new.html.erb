@@ -25,7 +25,7 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="projects">
           <div class="col-md-6 col-md-offset-2">
-            <%= render "projects/form" %>
+            <%= render "project" %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="experiences">
@@ -35,53 +35,10 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="education">
           <div class="col-md-6 col-md-offset-2">
-            <%= render "educations/form" %>
+            <%= render "education" %>
           </div>
         </div>
       </div>
     </div>
  </div>
 </div>
-
-<!--**********************************************************************  -->
-<!--*****  EVERYTHING BELOW HERE LIVE OUTSIDE THE PAGE *******************  -->
-<!--*******  ALL DIVS ABOVE ARE CLOSED ***********************************  -->
-<!--**** LEAVE THE BOTTOM ALONE, YOU CAN COMMENT IT OUT IF IT GIVES YOU   -->
-<!-- ANY PROBLEMS -->
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="somethinghere" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h1 class="modal-title" id="myModalLabel">Preview</h1>
-        <div class="modal-body">
-
-<!--*************************************************************************-->
-            <%= render "showform" %>
-
-                <li id= "skills">skills</li>
-                <li id= "education">skills</li>
-                <li id= "experiences">skills</li>
-                <li id= "projects">skills</li>
-
-
-              <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li id="skills" role="presentation" class="active"><a href="#skills"  role="tab" data-toggle="tab">Skills</a></li>
-                <li role="presentation" id="education"><a href="#education"  data-toggle="tab">Education</a></li>
-                <li role="presentation"><a href="#experiences" id="experiences" role="tab" data-toggle="tab">Experiences</a></li>
-                <li role="presentation"><a href="#projects" id="projects" role="tab" data-toggle="tab">Projects</a></li>
-                </li>
-              </ul>
-
-            <h1 id="target"></h1>
-
-
-
-<!--*************************************************************************-->
-          <span class="right"><button type="button" class="btn btn-default stn-sm" data-dismiss="modal">Close</button></span>
-        </div>
-      </div>
-    </div>
-  </div>

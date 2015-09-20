@@ -1,0 +1,6 @@
+$('#addproject').modal('toggle');
+
+$('#project-list').append("<%=  j render 'project', {p: @project} %>");
+$('#addproject input').each(function(){
+    $(this).val("");
+});

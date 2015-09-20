@@ -22,12 +22,12 @@ gem "simple_form"
 gem "letter_opener", :group => :development
 gem 'fog'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'cowsay'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'cowsay'
-  gem 'faker'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'pry'
@@ -40,6 +40,4 @@ group :development, :test do
   gem 'hirb'
   gem 'awesome_print'
   gem 'rails-erd'
-  gem 'pry'
-  gem 'pry-rails'
 end

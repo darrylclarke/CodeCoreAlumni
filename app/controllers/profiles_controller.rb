@@ -15,12 +15,13 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
+    @user = @profile.user
     respond_to do |format|
       if @profile.save
         format.html  { redirect_to @profile, notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
-        format.html { render "new", flash: "Profile created!"  }
+        format.html { render :new, alert: "Profile failed to create!"  }
         format.json   { render json: @profile.errors, status: :unprocessable_entity}
       end
     end

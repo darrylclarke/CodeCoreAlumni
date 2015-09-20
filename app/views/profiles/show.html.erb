@@ -9,7 +9,9 @@
         <h5>
         <p> Full Stack Web developper </p>
         <hr>
+        <% if @profile.resume? %>
         <button type="button" class="btn btn-success btn-lg">Download Resume</button>
+        <% end %>
         <br><br>
         <button type="button" class="btn btn-danger btn-lg">Contact Me</button>
       </div>

@@ -1,3 +1,4 @@
+
 <%= simple_form_for @user, url: users_path do |f| %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -7,6 +8,7 @@
   <% end %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
+    <%= f.simple_captcha(:object => 'user', :label => "Enter numbers..", :message => "The secret Image and code were different") %>
   <div class="form-group">
     <%= f.submit  class: "btn btn-primary" %>
   </div>

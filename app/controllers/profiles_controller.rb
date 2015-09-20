@@ -33,8 +33,9 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
+
     respond_to do |format|
-      if @profile.update
+      if @profile.update profile_params
         format.html { redirect_to profile_path(@profile), notice: "Profile updated!" }
         format.json { render :show, status: :ok, location: @profile }
       else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920214108) do
+ActiveRecord::Schema.define(version: 20150920005758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,30 +97,6 @@ ActiveRecord::Schema.define(version: 20150920214108) do
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
-  create_table "skills", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "taggings", ["skill_id"], name: "index_taggings_on_skill_id", using: :btree
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -139,7 +115,4 @@ ActiveRecord::Schema.define(version: 20150920214108) do
   add_foreign_key "experiences", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
-  add_foreign_key "skills", "users"
-  add_foreign_key "taggings", "skills"
-  add_foreign_key "taggings", "tags"
 end

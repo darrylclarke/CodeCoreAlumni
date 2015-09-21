@@ -77,7 +77,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:description_long, :description_short, :linkedin,
+    params.require(:profile).permit(:title, :description_long, :description_short, :linkedin,
                                     :github, :twitter, :personal_url, :avatar, :resume,
                                     :for_hire, {tag_ids: []})
   end

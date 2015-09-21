@@ -19,4 +19,15 @@ class User < ActiveRecord::Base
   def generate_password_reset_token!
     update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(45))
   end
+  
+  
+  extend FriendlyId
+	friendly_id :slug_candidates, use: [:slugged, :history]
+  
+  def slug_candidates
+    [
+      [:first_name, :last_name],
+      [:first_name, :last_name, :id]
+    ]
+  end
 end

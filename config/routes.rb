@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   resources :skills
   get 'welcome/index'
-
+  get 'admin/skills' => 'tags#new'
   resources :projects
   resources :experiences
   resources :educations
   resources :profiles, param: :slug
   resources :admin, only: [:index,:update,:destroy]
+  resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

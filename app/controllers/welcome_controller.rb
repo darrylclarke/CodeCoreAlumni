@@ -11,13 +11,12 @@ class WelcomeController < ApplicationController
     # end
   end
 
-  def show
-  end
   def all_student
-
+    @profiles = Profile.all
   end
 
   def for_hire
+    @profiles = Profile.all.where(for_hire: true)
 
   end
 

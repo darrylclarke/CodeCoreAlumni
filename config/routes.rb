@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :skills
   get 'welcome/index'
 
   resources :projects

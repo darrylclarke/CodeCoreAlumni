@@ -1,15 +1,26 @@
-
-    <h1>Available Students</h1>
-
+<% counter = 0 %>
+<div class = "text-center">
+    <h1>All Students</h1>
+    <table class = "table">
+    <tr>
     <% @profiles.each do |profile| %>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="<%= profile.avatar.url(:square)%>" alt="...">
-          <div class="caption">
-            <h3><%= profile.user.full_name %></h3>
-            <p class="word"><%= profile.description_short %></p>
-            <p><%= link_to "View Profile", profile_path(profile.user.slug), html_options = {class: "btn btn-primary", role: "button"} %></p>
+    <% counter += 1 %>
+      <td>
+        <div class="box">
+          <div class="thumbnail">
+            <img src="<%= profile.avatar.url(:square)%>" alt="...">
+            <div class="caption">
+              <h3><%= profile.user.full_name %></h3>
+              <p class="word"><%= profile.description_short %></p>
+              <p><%= link_to "View Profile", profile_path(profile.user.slug), html_options = {class: "btn btn-primary", role: "button"} %></p>
+            </div>
           </div>
         </div>
-      </div>
+      </td>
+    <% if counter % 4 == 0 %>
+    </tr>
+    <tr>
     <% end %>
+    <% end %>
+    </tr>
+    </table>

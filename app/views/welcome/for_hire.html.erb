@@ -8,7 +8,7 @@
           <div class="caption">
             <h3><%= profile.user.full_name %></h3>
             <p class="word"><%= profile.description_short %></p>
-            <p><%= link_to "View Profile", profile_path(profile), html_options = {class: "btn btn-primary", role: "button"} %></p>
+            <p><%= link_to "View Profile", profile_path(profile.user.slug), html_options = {class: "btn btn-primary", role: "button"} %></p>
           </div>
         </div>
       </div>

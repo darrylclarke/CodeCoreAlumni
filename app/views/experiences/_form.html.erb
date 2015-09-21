@@ -1,0 +1,51 @@
+<%= simple_form_for (@experience ||= Experience.new), html: {class: "experience-form form-group"} do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %></h2>
+
+      <ul>
+      <% @experience.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :job_title %><br>
+    <%= f.text_field :job_title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :company_url, "Company URL"%><br>
+    <%= f.text_area :company_url , class: "form_control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form_control" %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date, discard_day: true, default: {day: 1}, class: "form_control" %>
+  </div>
+  <div class="field">
+    <table>
+      <td>
+        <%= f.label :end_date %><br>
+        <%= f.date_select :end_date, {discard_day: true }, class: "experience-end-date form_control" %>
+      </td>
+      <td>OR
+      </td>
+      <td>
+        <%= f.label :presently_working  %>
+        <%= f.check_box :presently_working, id: "exp-present-day-checkbox", class: "form_control" %>
+      </td>
+    </table>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

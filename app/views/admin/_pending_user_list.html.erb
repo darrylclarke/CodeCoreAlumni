@@ -1,0 +1,18 @@
+<div class="well pending_users">
+  <h3 id="admin-message"></h3>
+  <h2>Pending User List</h2>
+  <table id="pending-user-list">
+    <thead>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @pending_users.each do |u| %>
+        <%= render 'user', user: u %>        
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

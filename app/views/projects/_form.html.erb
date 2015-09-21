@@ -1,0 +1,22 @@
+<%= simple_form_for(@project ||= Project.new) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %></h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :github_url %>
+    <%= f.input :direct_url %>
+    <%= f.input :date %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

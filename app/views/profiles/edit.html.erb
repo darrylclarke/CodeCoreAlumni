@@ -1,0 +1,49 @@
+<div class="container middle_section">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h2>Edit Your Profile</h2>
+      </div>
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+          <li role="presentation" class="active"><a href="#profile" role="tab" data-toggle="tab">About</a></li>
+          <li role="presentation"><a href="#projects" role="tab" data-toggle="tab">Projects</a></li>
+          <li role="presentation"><a href="#experiences" role="tab" data-toggle="tab">Experiences</a></li>
+          <li role="presentation"><a href="#education" role="tab" data-toggle="tab">Education</a></li>
+          </li>
+          <li role="presentation"><a href="#preview" role="tab" data-toggle="tab">Preview</a></li>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="profile">
+            <div class="col-md-12">
+              <%= render "form" %>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="projects">
+            <div class="col-md-12">
+              <%= render "project" %>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="experiences">
+            <div class="col-md-12">
+              <%= render "experience" %>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="education">
+            <div class="col-md-12">
+              <%= render "education" %>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="preview">
+            <div class="col-md-12">
+              <%= render "showform" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<button type="button" id="modal-button" class="right btn btn-success btn-add btn-s" data-toggle="modal" data-target="#addeducation">Add Education</button>
+<br>
+<hr>
+<div id="education-list">
+  <% @user.educations.each do |e| %>
+    <%= render "educations/education", {e: e} %>
+  <% end %>
+</div>
+<div class="modal fade" id="addeducation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" id="myModalLabel">New Education</h1>
+      <div class="modal-body">
+        <div id="education-errors" class="red"></div>
+        <%= simple_form_for (@education = Education.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
+            <%= f.input :degree %>
+            <%= f.input :institution %>
+            <%= f.input :desc %>
+            <%= f.input :year %>
+            <%= f.submit %>
+        <span class="right"><button type="button" class="btn btn-default stn-sm" data-dismiss="modal">Close</button></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

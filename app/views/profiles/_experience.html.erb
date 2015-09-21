@@ -1,0 +1,46 @@
+<button type="button" id="modal-button" class="right btn btn-success btn-add btn-s" data-toggle="modal" data-target="#addexperience">Add Experience</button>
+<br>
+<hr>
+<div id="experience-list">
+  <% if @user && @user.experiences.any? %>
+    <% @user.experiences.each do |e| %>
+      <%= render "experiences/experience", {e: e} %>
+    <% end %>
+  <% end %>
+</div>
+<div class="modal fade" id="addexperience" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" id="myModalLabel">New Experience</h1>
+        <div class="modal-body">
+          <div id="experience-errors" class="red"></div>
+            <%= simple_form_for (@experience = Experience.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
+              <%= f.input :job_title %>
+              <%= f.input :company %>
+              <%= f.input :company_url, label: "Company URL" %>
+              <%= f.input :description %><br>
+            <div class="field">
+              <%= f.label :start_date %><br>
+              <%= f.date_select :start_date, {discard_day: true }, class: "form_control" %>
+            </div>
+            <div class="field">
+              <table>
+                <td>
+                  <%= f.label :end_date %><br>
+                  <%= f.date_select :end_date, {discard_day: true }, class: "experience-end-date form_control" %>
+                </td>
+                <td>OR
+                </td>
+                <td>
+                  <%= f.input :presently_working, input_html: {id: "exp-present-day-checkbox", class: "form_control"}  %>
+                </td>
+              </table>
+            </div>
+            <%= f.submit %>
+            <span class="right"><button type="button" class="btn btn-default stn-sm" data-dismiss="modal">Close</button></span>
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,78 @@
+<div class="container ">
+  <div class="row middle_section">
+    <div class="col-md-2 col-sm-2">
+      <div class="user-wrapper">
+        <%= image_tag @profile.avatar.url(:square) %>
+      </div>
+      <div class="description">
+        <h4> <%= @user.full_name%></h4>
+        <h5>
+        <p><%= @profile.title%></p>
+        <hr>
+        <% if @profile.resume? %>
+        <button type="button" class="btn btn-success btn-lg">Download Resume</button>
+        <% end %>
+        <br><br>
+        <!-- <button type="button" class="btn btn-primary btn-lg">Contact Me</button> -->
+        <button type="button" class="btn btn-warning btn-add btn-lg" data-toggle="modal" data-target="#contactMe">Contact Me</button>
+      </div>
+    </div>
+    <div class="col-md-1 col-sm-1">
+    </div>
+    <div class="col-md-9 col-sm-9 user-wrapper">
+      <p><%= @profile.description_short %></p>
+      <hr>
+      <p><%= @profile.description_long %></p>
+      <h3>Skills: </h3>
+      <% @profile.tags.map do |x| %>
+        <div class="skills color-info"><%= x.name %></div>
+      <% end %>
+      <hr>
+      <h3> Social Links: </h3>
+      <% if @profile.github? %>
+        <%= link_to fa_icon("github") + " Github", @profile.github, class:"btn btn-social btn-facebook"%>
+      <% end %>
+      <% if @profile.linkedin? %>
+        <%= link_to fa_icon("linkedin") + " Linkedin", @profile.linkedin, class:"btn btn-social btn-linkedin"%>
+      <% end %>
+      <% if @profile.twitter? %>
+        <%= link_to fa_icon("twitter") + " Twitter", @profile.twitter, class:"btn btn-social btn-facebook"%>
+      <% end %>
+      <% if @profile.personal_url? %>
+        <%= link_to fa_icon("external-link") + " Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#education" aria-controls="tasks" role="tab" data-toggle="tab"><i class="fa fa-certificate"></i>
+ Education</a></li>
+      <li role="presentation"><a href="#experiences" aria-controls="tasks" role="tab" data-toggle="tab"><i class="fa fa-users"></i>
+ Experiences</a></li>
+      <li role="presentation"><a href="#projects" aria-controls="edit" role="tab" data-toggle="tab"><i class="fa fa-file-text"></i>
+ Projects</a></li>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="tab-content main_tab">
+      <div role="tabpanel" class="tab-pane active" id="education">
+        <%= render "front_education" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="experiences">
+        <%= render "front_experience" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="projects">
+        <%= render "front_projects" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: "contacts/contact_model", locals: {user: @user, profile: @profile} %>

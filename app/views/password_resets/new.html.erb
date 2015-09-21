@@ -1,0 +1,10 @@
+<h1>Request Password Reset Authorization</h1>
+<%= form_tag password_resets_path do %>
+  <div class="form-group">
+    <%= label_tag :email %>
+    <%= email_field :email, "", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%=  submit_tag "Reset Password", class: "btn btn-primary" %>
+  </div>
+<% end %>

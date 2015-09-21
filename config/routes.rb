@@ -1,9 +1,31 @@
 Rails.application.routes.draw do
+  resources :skills
+  get 'welcome/index'
+
+  resources :projects
+  resources :experiences
+  resources :educations
+  resources :profiles, param: :slug
+  resources :admin, only: [:index,:update,:destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+  resources :users, only: [:new, :create] do
+    get :edit, on: :collection
+    patch :update, on: :collection
+
+  end
+
+  match '/contact/:user_id',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:create]
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

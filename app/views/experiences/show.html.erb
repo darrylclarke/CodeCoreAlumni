@@ -1,0 +1,14 @@
+
+<table class="experience-table">
+  <thead>
+    <th>Time Period</th>
+    <th>Position</th>
+    <th>Company</th>
+  </thead>
+  <tbody>
+    <%= render "experience", exp: @experience %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path %>

@@ -1,0 +1,24 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile_linkedin, .profile_github, .profile_twitter, .profile_personal_url,  {
+}
+.profile_linkedin textarea {
+  line-height: 5px !important;
+}
+.profile_github textarea {
+  line-height: 5px !important;
+}
+.profile_twitter textarea {
+  line-height: 5px !important;
+}
+.profile_personal_url textarea {
+  line-height: 5px !important;
+}
+.right {
+  float: right;
+}
+.red p {
+ color: red;
+ font-size: 12px !important;
+}

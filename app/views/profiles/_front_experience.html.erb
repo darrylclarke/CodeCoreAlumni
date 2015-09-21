@@ -1,0 +1,19 @@
+<div class="profile-container">
+  <div class="row">
+    <% if @user.experiences.count > 0 %>
+      <% @user.experiences.each do |e| %>
+        <b>Job Title:</b> <%= e.job_title %> &nbsp;-&nbsp;
+        <b>Company:</b> <%= e.company %><br><br>
+        <b>Periode:</b> <%= e.start_date %> - <%= e.end_date %>
+        <% if e.presently_working %>
+          <b>&nbsp;-&nbsp;Current Position</b>
+        <% end %>
+        <br><br>
+        <p><%= e.description %><p/>
+        <hr>
+      <% end %>
+    <%else %>
+      <h3>No Experience Entered</h3>
+    <% end %>
+  </div>
+</div>

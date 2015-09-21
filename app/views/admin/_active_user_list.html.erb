@@ -1,0 +1,16 @@
+<div class="well active_users">
+  <%# render 'active_users' %>
+  <h2>Active User List</h2>
+  <table id="active-user-list">
+    <thead>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @active_users.each do |u| %>
+        <%= render 'user', user: u %>        
+      <% end %>
+    </tbody>
+  </table>
+</div>

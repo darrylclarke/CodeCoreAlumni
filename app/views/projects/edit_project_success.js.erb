@@ -1,7 +1,7 @@
-$("#<%= @project.id %>-project").remove();
-$('#<%= @project.id %>-modal').modal('toggle');
-
-$('#project-list').append("<%=  j render 'project', {p: @project} %>");
 $('#<%= @project.id %>-modal input:not([type="submit"])').each(function(){
     $(this).val("");
 });
+
+$('#<%= @project.id %>-modal').modal('toggle');
+
+$("#<%= @project.id %>-project").replaceWith("<%=  j render 'project', {p: @project} %>");

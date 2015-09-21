@@ -1,15 +1,68 @@
-<b>Tile:</b> <%=  e.job_title %><br>
-<b>Company:</b> <%= e.company %><br>
-<b>URL:</b> <%= e.company_url %><br>
-<b>Description:</b> <%= e.description %><br>
-<b>Current Position:</b>
-<% if e.presently_working == TRUE %>
-   <input type="checkbox" name="presently_working" id="presently_working" checked="checked">
-   <% else %>
-   <input type="checkbox" name="optimize" id="optimize">
-   <% end %>
-&nbsp;&nbsp;&nbsp; <b>Start Date:</b> <%= e.start_date %> - <b>End Date:</b> <%= e.end_date %><br>
-<span class="right"><%= link_to "Edit", edit_experience_path(e) %> |
- <%= link_to "Delete", experience_path(e), method: :delete %></span>
- <hr>
- <br>
+<div id="<%= e.id %>-experience">
+  <b>Tile:</b> <%=  e.job_title %><br>
+  <b>Company:</b> <%= e.company %><br>
+  <b>URL:</b> <%= e.company_url %><br>
+  <b>Description:</b> <%= e.description %><br>
+  <b>Current Position:</b>
+  <% if e.presently_working == TRUE %>
+     <input type="checkbox" name="presently_working" id="presently_working" checked="checked">
+     <% else %>
+     <input type="checkbox" name="optimize" id="optimize">
+     <% end %>
+  &nbsp;&nbsp;&nbsp; <b>Start Date:</b> <%= e.start_date %> - <b>End Date:</b> <%= e.end_date %><br>
+  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-modal">Edit</a> |
+   <%= link_to "Delete", experience_path(e), method: :delete, remote: true %></span>
+   <hr>
+   <br>
+</div>
+
+<div class="modal fade" id="<%= e.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" id="myModalLabel">Edit Experience</h1>
+      <div class="modal-body">
+        <div id="experience-errors" class="red"></div>
+        <%= simple_form_for ( @experience = e ) , html: {class: "experience-form form-group"}, method: :patch, remote: true do |f| %>
+
+          <div class="field">
+            <%= f.label :job_title %><br>
+            <%= f.text_field :job_title, class: "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :company %><br>
+            <%= f.text_field :company, class: "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :company_url, "Company URL"%><br>
+            <%= f.text_area :company_url , class: "form_control" %>
+          </div>
+          <div class="field">
+            <%= f.label :description %><br>
+            <%= f.text_area :description, class: "form_control" %>
+          </div>
+          <div class="field">
+            <%= f.label :start_date %><br>
+            <%= f.date_select :start_date, {discard_day: true }, class: "form_control" %>
+          </div>
+          <div class="field">
+            <table>
+              <td>
+                <%= f.label :end_date %><br>
+                <%= f.date_select :end_date, {discard_day: true }, class: "experience-end-date form_control" %>
+              </td>
+              <td>OR
+              </td>
+              <td>
+                <%= f.label :presently_working  %>
+                <%= f.check_box :presently_working, id: "exp-present-day-checkbox", class: "form_control" %>
+              </td>
+            </table>
+          </div>
+            <%= f.submit %>
+        <span class="right"><button type="button" class="btn btn-default stn-sm" data-dismiss="modal">Close</button></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

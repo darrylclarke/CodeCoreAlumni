@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   resources :skills
   get 'welcome/index'
+
   get 'admin/skills' => 'tags#new'
+
+
+  get 'welcome/all_student'
+  get 'welcome/for_hire'
+
+
   resources :projects
   resources :experiences
   resources :educations

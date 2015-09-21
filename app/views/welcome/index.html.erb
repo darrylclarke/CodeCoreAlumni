@@ -34,11 +34,11 @@
   </div>
   <div class="row middle_section">
     <div class="container-thumb">
-    
+
     <% @profiles.each do |profile| %>
       <%= render "/profiles/front_page_tile", profile: profile, user: profile.user %>
     <% end %>
-    
+
     </div>
   </div>
   <div class="row middle_section">
@@ -71,8 +71,11 @@
   <div class="row middle_section">
     <div class="col-sm-10 col-sm-offset-1 attribute-content text-center">
       <p>
-        <button type="button" class="btn btn-primary btn-lg">Large button</button>
-        <button type="button" class="btn btn-default btn-lg">Large button</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg">Available Students</button> -->
+        <!-- <button type="button" class="btn btn-default btn-lg">All Students</button> -->
+        <%= link_to "Available Students", welcome_for_hire_path, html_options = {class: "btn btn-primary btn-lg", role: "button"} %>
+        <%= link_to "All Students", welcome_all_student_path, html_options = {class: "btn btn-default btn-lg", role: "button"} %>
+
       </p>
     </div>
   </div>

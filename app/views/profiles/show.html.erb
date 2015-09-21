@@ -14,7 +14,7 @@
         <% end %>
         <br><br>
         <!-- <button type="button" class="btn btn-primary btn-lg">Contact Me</button> -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contactMe">Contact Me</button>
+        <button type="button" class="btn btn-warning btn-add btn-lg" data-toggle="modal" data-target="#contactMe">Contact Me</button>
       </div>
     </div>
     <div class="col-md-1 col-sm-1">
@@ -43,7 +43,7 @@
         <%= link_to fa_icon("twitter") + " Twitter", @profile.twitter, class:"btn btn-social btn-facebook"%>
       <% end %>
       <% if @profile.personal_url? %>
-        <%= link_to fa_icon("external-link") + "Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
+        <%= link_to fa_icon("external-link") + " Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
       <% end %>
     </div>
   </div>

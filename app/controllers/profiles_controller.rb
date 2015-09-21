@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
 
-
   before_action :authorize!, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @user = current_user

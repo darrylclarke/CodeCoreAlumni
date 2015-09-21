@@ -13,12 +13,14 @@ class ContactsController < ApplicationController
     title = params[:contact][:title]
     email = params[:contact][:email]
     body  = params[:contact][:body]
+    @contact = Contact.new contact_params
+    @contact.user = user
     ContactsMailer.notify_profile_owner(user, title, email, body).deliver_now
     redirect_to root_path
   end
 
 
   def contact_params
-    params.require(:education).permit(:degree, :institution, :desc, :year)
+    params.require(:contact).permit(:title, :email, :body)
   end
 end

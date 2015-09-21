@@ -28,8 +28,10 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
-    @user = current_user
+
+      @user = User.find_by_slug( params[:id] )
+      @profile = @user.profile
+
     if @profile.user_id != current_user.id
       redirect_to profile_path(@profile)
     end
@@ -40,7 +42,7 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     respond_to do |format|
       if @profile.update profile_params
-        format.html { redirect_to profile_path(@profile), notice: "Profile updated!" }
+        format.html { redirect_to profile_slug_path(slug: @user.slug), notice: "Profile updated!" }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :new }

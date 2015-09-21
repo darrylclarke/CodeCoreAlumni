@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :profiles, except: [:show]
   resources :admin, only: [:index,:update,:destroy]
 
-  get "/profiles/:slug", to: "profiles#show"
-  
+  get "/profiles/:slug", to: "profiles#show", as: :profile_slug
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :password_resets, only: [:new, :create, :edit, :update]
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     patch :update, on: :collection
 
   end
-  
+
   match '/contact/:user_id',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:create]
 

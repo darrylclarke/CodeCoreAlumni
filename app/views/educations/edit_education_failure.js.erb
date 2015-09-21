@@ -1,0 +1,5 @@
+$('#education-errors').html("");
+
+<% @education.errors.full_messages.each do |msg| %>
+$('#<%= @education.id %>-errors').append("<p>* <%= msg %></p>");
+<% end %>

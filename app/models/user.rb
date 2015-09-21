@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_secure_password
+  has_one :skill
   has_one :profile
   has_many :projects, dependent: :destroy
   has_many :experiences, dependent: :destroy
@@ -20,7 +21,6 @@ class User < ActiveRecord::Base
     update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(45))
   end
   
-  
   extend FriendlyId
 	friendly_id :slug_candidates, use: [:slugged, :history]
   
@@ -30,4 +30,18 @@ class User < ActiveRecord::Base
       [:first_name, :last_name, :id]
     ]
   end
+
+  def self.pending_user_list
+    where(is_active: false)
+  end
+  def self.active_user_list
+    where(is_active: true)
+  end
+  def self.admin_user_list
+    where(is_admin: true)
+  end
+  def self.not_admin_user_list
+    where(is_admin: false)
+  end
+
 end

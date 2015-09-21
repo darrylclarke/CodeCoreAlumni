@@ -1,6 +1,30 @@
-<b><%=  e.institution %></b><br>
-    <%= e.degree %><br>
-    <%= e.desc %><br>
-    <%= e.year %><br>
-    <span class="right"><%= link_to "Edit", edit_education_path(e) %>
-    <%= link_to "Delete", education_path(e), method: :delete %></span>
+<div id="<%= e.id %>-education">
+  <b>Institution:</b> <%=  e.institution %><br>
+  <b>Degree:</b> <%= e.degree %><br>
+  <b>Description:</b> <%= e.desc %><br>
+  <b>Graduated Year:</b><%= e.year %><br>
+  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-modal">Edit</a> |
+   <%= link_to "Delete", education_path(e), method: :delete, remote: true %></span>
+  <hr>
+  <br>
+</div>
+
+<div class="modal fade" id="<%= e.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" id="myModalLabel">New Education</h1>
+      <div class="modal-body">
+        <div id="<%= e.id %>-errors" class="red"></div>
+        <%= simple_form_for (@education = e), html: {class: "experience-form form-group"}, method: :patch, remote: true do |f| %>
+            <%= f.input :degree %>
+            <%= f.input :institution %>
+            <%= f.input :desc %>
+            <%= f.input :year %>
+            <%= f.submit %>
+        <span class="right"><button type="button" class="btn btn-default stn-sm" data-dismiss="modal">Close</button></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

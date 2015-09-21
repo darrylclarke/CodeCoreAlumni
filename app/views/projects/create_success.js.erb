@@ -1,6 +1,8 @@
 $('#addproject').modal('toggle');
 
 $('#project-list').append("<%=  j render 'project', {p: @project} %>");
-$('#addproject input').each(function(){
+$('#addproject input:not([type="submit"])').each(function(){
     $(this).val("");
 });
+$('#addproject textarea').val("");
+$('#project-errors').html("");

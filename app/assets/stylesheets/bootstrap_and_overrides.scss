@@ -20,6 +20,15 @@ img {
     vertical-align: middle;
 }
 
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+  color: #CB0D0F;
+}
+
 @media screen and (max-width: 768px) {
   .container {
       max-width: 500px;
@@ -82,13 +91,12 @@ img {
   box-shadow: none !important;
 }
 
-.tab-pane {
-
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0px 0px 5px 5px;
-    padding: 10px;
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
 }
 
 .nav-tabs {
@@ -186,7 +194,6 @@ font-size: 70px;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
-    
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
@@ -201,4 +208,56 @@ font-size: 70px;
     color: #FFF;
     background-color: #5BC0DE;
     border-color: #46B8DA;
+}
+
+#profile.tab-pane.active,
+#projects.tab-pane.active,
+#experiences.tab-pane.active,
+#education.tab-pane.active {
+  border: none !important ;
+  padding: 10px !important;
+}
+
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #FFF;
+    background-color: #CB0D0F;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #CB0D0F;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #CB0D0F;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDD #DDD transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    cursor: default;
+}
+
+.btn:hover {
+    color: #CB0D0F;
+    text-decoration: none;
+}
+
+.btn-add:hover   {
+    color: #CB0D0F;
+    color: #FFF;
+    background-color: #CB0D0F;
+    border-color: #CB0D0F;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

@@ -7,13 +7,14 @@
       <div class="description">
         <h4> <%= @user.full_name%></h4>
         <h5>
-        <p> Full Stack Web developper </p>
+        <p><%= @profile.title%></p>
         <hr>
         <% if @profile.resume? %>
         <button type="button" class="btn btn-success btn-lg">Download Resume</button>
         <% end %>
         <br><br>
-        <button type="button" class="btn btn-danger btn-lg">Contact Me</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg">Contact Me</button> -->
+        <button type="button" class="btn btn-warning btn-add btn-lg" data-toggle="modal" data-target="#contactMe">Contact Me</button>
       </div>
     </div>
     <div class="col-md-1 col-sm-1">
@@ -42,7 +43,7 @@
         <%= link_to fa_icon("twitter") + " Twitter", @profile.twitter, class:"btn btn-social btn-facebook"%>
       <% end %>
       <% if @profile.personal_url? %>
-        <%= link_to fa_icon("external-link") + "Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
+        <%= link_to fa_icon("external-link") + " Personal Website", @profile.personal_url, class:"btn btn-social btn-facebook"%>
       <% end %>
     </div>
   </div>
@@ -66,14 +67,16 @@
   <div class="row">
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="education">
-        <%= render "education" %>
+        <%= render "front_education" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="experiences">
         <%= render "front_experience" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="projects">
-        <%= render "profiles/project" %>
+        <%= render "front_projects" %>
       </div>
     </div>
   </div>
 </div>
+
+<%= render partial: "contacts/contact_model", locals: {user: @user, profile: @profile} %>

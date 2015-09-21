@@ -1,0 +1,7 @@
+$('#<%= @education.id %>-modal input:not([type="submit"])').each(function(){
+    $(this).val("");
+});
+
+$('#<%= @education.id %>-modal').modal('toggle');
+
+$("#<%= @education.id %>-education").replaceWith("<%=  j render 'education', {e: @education} %>");

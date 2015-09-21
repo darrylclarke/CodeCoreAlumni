@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :skills
   get 'welcome/index'
 
   resources :projects
   resources :experiences
   resources :educations
   resources :profiles, except: [:show]
+  resources :admin, only: [:index,:update,:destroy]
 
   get "/profiles/:slug", to: "profiles#show"
   

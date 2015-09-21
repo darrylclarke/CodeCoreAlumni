@@ -1,0 +1,21 @@
+<!--
+DESCRIPTION: Renders 1 row in the admin panel
+INPUT: User 
+-->
+<tr id="<%= dom_id(user) %>">
+  <td class="user-full-name"><%= user.full_name %></td>
+  <td class="user-email"><%= user.email %></td>
+  <!-- ACTIONS START -->
+  <td class="user-actions">
+     <!-- Need AJAX to change button setting -->
+    <% if user.is_active %>
+      <button type="button" class="btn btn-primary user-state-btn" data-active-state="true">Deactivate</button>
+    <% else %>
+      <button type="button" class="btn btn-primary user-state-btn" data-active-state="false">Activate</button>
+    <% end %>
+    <button type="button" class="btn btn-primary user-delete-btn">Delete</button>
+  </td>
+  <!-- ACTIONS END -->
+</tr>
+
+

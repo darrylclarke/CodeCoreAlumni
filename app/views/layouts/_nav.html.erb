@@ -16,7 +16,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ACCOUNT ACTIONS<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <%if current_user.profile %>
-              <li><%= link_to "Edit Your Profile", new_profile_path%></li>
+              <li><%= link_to "Edit Your Profile", edit_profile_path(current_user.profile)%></li>
             <% else %>
               <li><%= link_to "Create Your Profile", new_profile_path%></li>
             <% end %>

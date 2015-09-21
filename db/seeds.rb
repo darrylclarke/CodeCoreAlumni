@@ -5,14 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#   
+#
 # Make the ADMIN acct
   first_name  = "admin"
   last_name   = "admin"
   email       = "admin@codecore.ca"
   password    = "admin"
   is_active   = true
-  is_admin    = true 
+  is_admin    = true
   User.create(
     first_name: first_name,
     last_name: last_name,
@@ -44,7 +44,7 @@ NUM_INACTIVE_USERS.times do
   last_name   = Faker::Name.last_name
   email       = Faker::Internet.email
   password    = first_name
-  is_active   = false 
+  is_active   = false
   is_admin    = false
   User.create(
     first_name: first_name,
@@ -84,4 +84,3 @@ NUM_EXPERIENCES.times do
       user_id: exp_user_id
   );
 end
-

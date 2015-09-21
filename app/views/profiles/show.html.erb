@@ -24,13 +24,9 @@
       <hr>
       <p><%= @profile.description_long %></p>
       <h3>Skills: </h3>
-      <div class="skills color-info">Ruby</div>
-      <div class="skills color-info">Rails</div>
-      <div class="skills color-info">HMTL</div>
-      <div class="skills color-info">CSS</div>
-      <div class="skills color-info">JavaScript</div>
-      <div class="skills color-info">Jquery</div>
-      <div class="skills color-info">Ajax</div>
+      <% @profile.tags.map do |x| %>
+        <div class="skills color-info"><%= x.name %></div>
+      <% end %>
       <hr>
       <h3> Social Links: </h3>
       <% if @profile.github? %>
@@ -65,7 +61,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="tab-content">
+    <div class="tab-content main_tab">
       <div role="tabpanel" class="tab-pane active" id="education">
         <%= render "front_education" %>
       </div>

@@ -29,6 +29,10 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    @user = current_user
+    if @profile.user_id != current_user.id
+      redirect_to profile_path(@profile)
+    end
   end
 
   def update
@@ -68,7 +72,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:description_long, :description_short, :linkedin,
                                     :github, :twitter, :personal_url, :avatar, :resume,
-                                    :for_hire)
+                                    :for_hire, {tag_ids: []})
   end
 
   def authorize!

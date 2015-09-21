@@ -1,4 +1,4 @@
 class Tagging < ActiveRecord::Base
   belongs_to :tag
-  belongs_to :skill
+  belongs_to :profile
 end

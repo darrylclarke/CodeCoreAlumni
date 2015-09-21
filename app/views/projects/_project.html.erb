@@ -1,8 +1,8 @@
 <div id="<%= p.id %>-project">
   <b>Tile:</b><%=  p.title %><br>
   <b>Description:</b> <%= p.description %><br>
-  <b>GitHub</b>: <%= link_to p.github_url%><br>
-  <b>Project link:</b>: <%= link_to p.direct_url%><br>
+  <b>GitHub</b>: <%= link_to p.github_url %><br>
+  <b>Project link:</b>: <%= link_to p.direct_url %><br>
   <b>Project Dat:</b> <%= p.date %><br>
   <span class="right"><a data-toggle="modal" data-target="#<%= p.id %>-modal">Edit</a> |
    <%= link_to "Delete", project_path(p), method: :delete, remote: true %></span>

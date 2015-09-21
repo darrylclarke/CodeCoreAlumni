@@ -1,5 +1,4 @@
-<%if !current_user.profile %>
-<%= simple_form_for(@profile||=Profile.new) do |f| %>
+<%= simple_form_for(@profile ||= Profile.new) do |f| %>
     <%= f.input :avatar %>
     <%= f.input :description_short %>
     <%= f.input :description_long %>
@@ -7,6 +6,7 @@
     <%= f.input :github, placeholder: 'www.github.com/**you**' %>
     <%= f.input :twitter, placeholder: 'www.twitter.com/**you**' %>
     <%= f.input :personal_url, placeholder: 'www.you.com' %>
+    <%= f.association :tags, as: :check_boxes %>
     <%= f.input :resume %>
     <%= f.input :for_hire, input_html: { class: 'form-control' } %>
     <br>
@@ -14,25 +14,4 @@
     <div class="actions">
       <%= f.submit %>
     </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<% else %>
-<%= simple_form_for current_user.profile, url:profile_path(current_user.profile), method: :put do |f|%>
-    <%= f.input :avatar %>
-    <%= f.input :description_short %>
-    <%= f.input :description_long %>
-    <%= f.input :linkedin %>
-    <%= f.input :github %>
-    <%= f.input :twitter %>
-    <%= f.input :personal_url %>
-    <%= f.input :resume %>
-    <%= f.input :for_hire, input_html: { class: 'form-control' } %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 <% end %>

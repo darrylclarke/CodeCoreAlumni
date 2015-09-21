@@ -15,7 +15,7 @@
         <h1 class="modal-title" id="myModalLabel">New Experience</h1>
       <div class="modal-body">
         <div id="experience-errors" class="red"></div>
-        <%= simple_form_for (@experience ||= Experience.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
+        <%= simple_form_for (@experience = Experience.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
 
           <div class="field">
             <%= f.label :job_title %><br>

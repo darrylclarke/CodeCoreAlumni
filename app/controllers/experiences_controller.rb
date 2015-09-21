@@ -45,10 +45,10 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.update(experience_params)
         format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
-        format.json { render :show, status: :ok, location: @experience }
+        format.js { render :edit_experience_success }
       else
         format.html { render :edit }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        format.js { render :edit_experience_failure }
       end
     end
   end
@@ -59,7 +59,7 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     respond_to do |format|
       format.html { redirect_to experiences_url, notice: 'Experience was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { render :delete_experience }
     end
   end
 

@@ -34,10 +34,10 @@ class EducationsController < ApplicationController
     respond_to do |format|
       if @education.update(education_params)
         format.html { redirect_to @education, notice: 'Education was successfully updated.' }
-        format.json { render :show, status: :ok, location: @education }
+        format.js { render :edit_education_success }
       else
         format.html { render :edit }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
+        format.js { render :edit_education_failure }
       end
     end
   end
@@ -46,7 +46,7 @@ class EducationsController < ApplicationController
       @education.destroy
       respond_to do |format|
         format.html { redirect_to educations_url, notice: 'Education was successfully destroyed.' }
-        format.json { head :no_content }
+        format.js { render :delete_education }
       end
     end
 

@@ -13,7 +13,7 @@
         <h1 class="modal-title" id="myModalLabel">New Education</h1>
       <div class="modal-body">
         <div id="education-errors" class="red"></div>
-        <%= simple_form_for (@education ||= Education.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
+        <%= simple_form_for (@education = Education.new), html: {class: "experience-form form-group"}, remote: true do |f| %>
             <%= f.input :degree %>
             <%= f.input :institution %>
             <%= f.input :desc %>

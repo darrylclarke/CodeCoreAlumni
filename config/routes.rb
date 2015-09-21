@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   resources :projects
   resources :experiences
   resources :educations
-  resources :profiles, except: [:show]
+  resources :profiles, param: :slug
   resources :admin, only: [:index,:update,:destroy]
-
-  get "/profiles/:slug", to: "profiles#show", as: :profile_slug
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

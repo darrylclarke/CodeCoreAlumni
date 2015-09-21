@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     respond_to do |format|
       if @profile.save
-        format.html  { redirect_to @profile, notice: "Profile created!" }
+        format.html  { redirect_to profile_slug_path(slug: @user.slug), notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
         format.html { render :new, alert: "Profile failed to create!"  }
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def edit
 
-      @user = User.find_by_slug( params[:id] )
+      @user = User.find_by_slug( params[:slug] )
       @profile = @user.profile
 
     if @profile.user_id != current_user.id
@@ -38,11 +38,11 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:slug])
     @user = @profile.user
     respond_to do |format|
       if @profile.update profile_params
-        format.html { redirect_to profile_slug_path(slug: @user.slug), notice: "Profile updated!" }
+        format.html { redirect_to profile_path(slug: @user.slug), notice: "Profile updated!" }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :new }

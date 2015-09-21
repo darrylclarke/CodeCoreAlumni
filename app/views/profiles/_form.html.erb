@@ -1,5 +1,6 @@
 <%= simple_form_for(@profile ||= Profile.new) do |f| %>
     <%= f.input :avatar %>
+    <%= f.input :title %>
     <%= f.input :description_short %>
     <%= f.input :description_long %>
     <%= f.input :linkedin, placeholder: 'input like this-->   www.linkedin.com/**you**' %>

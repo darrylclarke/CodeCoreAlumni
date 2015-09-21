@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 20150921012301) do
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
+  create_table "skills", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "profile_id"
@@ -149,6 +157,7 @@ ActiveRecord::Schema.define(version: 20150921012301) do
   add_foreign_key "experiences", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
+  add_foreign_key "skills", "users"
   add_foreign_key "taggings", "profiles"
   add_foreign_key "taggings", "tags"
 end

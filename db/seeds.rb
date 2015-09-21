@@ -6,6 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
+
+def create_profile(input_id)
+  description_long  = Faker::Lorem.paragraphs
+  description_short = Faker::Hacker.say_something_smart
+  title             = Faker::Name.title
+  p = Profile.new(description_long: description_long,
+                 description_short: description_short,
+                 title: title)
+  p.user_id = input_id
+  p.save
+end
+
 # Make the ADMIN acct
   first_name  = "admin"
   last_name   = "admin"
@@ -13,7 +25,7 @@
   password    = "admin"
   is_active   = true
   is_admin    = true
-  User.create(
+  u = User.new(
     first_name: first_name,
     last_name: last_name,
     email:      email,
@@ -21,6 +33,9 @@
     is_active:  is_active,
     is_admin:   is_admin
   );
+  u.save
+  create_profile(u.id)
+
 NUM_ACTIVE_USERS = 25
 NUM_ACTIVE_USERS.times do
   first_name  = Faker::Name.first_name
@@ -29,7 +44,7 @@ NUM_ACTIVE_USERS.times do
   password    = first_name
   is_active   = true
   is_admin    = false
-  User.create(
+  u = User.new(
     first_name: first_name,
     last_name: last_name,
     email:      email,
@@ -37,6 +52,8 @@ NUM_ACTIVE_USERS.times do
     is_active:  is_active,
     is_admin:   is_admin
   );
+  u.save
+  create_profile(u.id)
 end
 NUM_INACTIVE_USERS = 5
 NUM_INACTIVE_USERS.times do

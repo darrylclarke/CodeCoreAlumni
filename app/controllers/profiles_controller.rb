@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     respond_to do |format|
       if @profile.save
-        format.html  { redirect_to profile_slug_path(slug: @user.slug), notice: "Profile created!" }
+        format.html  { redirect_to profile_path(slug: @user.slug), notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
         format.html { render :new, alert: "Profile failed to create!"  }

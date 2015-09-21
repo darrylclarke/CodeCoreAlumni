@@ -10,7 +10,7 @@
         <p><%= @profile.title%></p>
         <hr>
         <% if @profile.resume? %>
-        <button type="button" class="btn btn-success btn-lg">Download Resume</button>
+        <%= link_to "Download Resume", @profile.resume.url, class:"btn btn-success btn-lg" %>
         <% end %>
         <br><br>
         <!-- <button type="button" class="btn btn-primary btn-lg">Contact Me</button> -->

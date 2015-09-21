@@ -10,13 +10,13 @@
      <input type="checkbox" name="optimize" id="optimize">
      <% end %>
   &nbsp;&nbsp;&nbsp; <b>Start Date:</b> <%= e.start_date %> - <b>End Date:</b> <%= e.end_date %><br>
-  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-modal">Edit</a> |
+  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-editexperience">Edit</a> |
    <%= link_to "Delete", experience_path(e), method: :delete, remote: true %></span>
    <hr>
    <br>
 </div>
 
-<div class="modal fade" id="<%= e.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="<%= e.id %>-editexperience" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

@@ -3,13 +3,13 @@
   <b>Degree:</b> <%= e.degree %><br>
   <b>Description:</b> <%= e.desc %><br>
   <b>Graduated Year:</b><%= e.year %><br>
-  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-modal">Edit</a> |
+  <span class="right"><a data-toggle="modal" data-target="#<%= e.id %>-educationedit">Edit</a> |
    <%= link_to "Delete", education_path(e), method: :delete, remote: true %></span>
   <hr>
   <br>
 </div>
 
-<div class="modal fade" id="<%= e.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="<%= e.id %>-educationedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

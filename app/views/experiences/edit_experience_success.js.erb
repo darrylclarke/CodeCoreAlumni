@@ -1,7 +1,7 @@
-$('#<%= @experience.id %>-modal input:not([type="submit"])').each(function(){
+$('#<%= @experience.id %>-editexperience input:not([type="submit"])').each(function(){
     $(this).val("");
 });
 
-$('#<%= @experience.id %>-modal').modal('toggle');
+$('#<%= @experience.id %>-editexperience').modal('toggle');
 
 $("#<%= @experience.id %>-experience").replaceWith("<%=  j render 'experience', {e: @experience} %>");

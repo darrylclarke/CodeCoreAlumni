@@ -9,16 +9,18 @@ class ContactsController < ApplicationController
 
   def create
     user = User.find params[:user_id]
-    # user  = @profile.user
     title = params[:contact][:title]
     email = params[:contact][:email]
     body  = params[:contact][:body]
+    @contact = Contact.new contact_params
+    @contact.user_id = user.id
+    @contact.save
     ContactsMailer.notify_profile_owner(user, title, email, body).deliver_now
     redirect_to root_path
   end
 
 
   def contact_params
-    params.require(:education).permit(:degree, :institution, :desc, :year)
+    params.require(:contact).permit(:title, :email, :body)
   end
 end

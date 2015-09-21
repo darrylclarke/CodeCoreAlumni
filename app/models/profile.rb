@@ -15,6 +15,17 @@ class Profile < ActiveRecord::Base
   validate :twitter_url_must_be_valid
   validate :github_url_must_be_valid
 
+
+
+
+  scope :for_hire, -> { where(for_hire: false) }
+
+  # scope :for_hire_all, -> { where(for_hire: false) && Profile.select() }
+  # def self.
+  #   Profile.select('description_long', 'description_short', 'avatar', 'user_id', 'for_hire?')
+  # end
+
+
   # extend FriendlyId
 	# friendly_id :slug_candidates, use: [:slugged, :history]
 
@@ -26,7 +37,8 @@ class Profile < ActiveRecord::Base
   #     [:name, :street_number, :street, :city]
   #   ]
   # end
-  
+
+
   private
 
   # The twitter URL must begin with the string "https://twitter.com/" or else

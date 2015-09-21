@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150921012301) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +53,19 @@ ActiveRecord::Schema.define(version: 20150921012301) do
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "profiles", force: :cascade do |t|
     t.text     "description_long"
     t.string   "description_short"
@@ -66,9 +80,11 @@ ActiveRecord::Schema.define(version: 20150921012301) do
     t.text     "github"
     t.integer  "user_id"
     t.boolean  "for_hire"
+    t.string   "slug"
     t.string   "title"
   end
 
+  add_index "profiles", ["slug"], name: "index_profiles_on_slug", unique: true, using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
@@ -124,9 +140,11 @@ ActiveRecord::Schema.define(version: 20150921012301) do
     t.boolean  "is_active"
     t.boolean  "is_admin"
     t.string   "password_reset_token"
+    t.string   "slug"
   end
 
   add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
   add_foreign_key "educations", "users"
   add_foreign_key "experiences", "users"

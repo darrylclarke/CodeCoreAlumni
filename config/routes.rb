@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   resources :projects
   resources :experiences
   resources :educations
-  resources :profiles
+  resources :profiles, except: [:show]
   resources :admin, only: [:index,:update,:destroy]
 
+  get "/profiles/:slug", to: "profiles#show"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :password_resets, only: [:new, :create, :edit, :update]

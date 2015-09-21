@@ -15,6 +15,18 @@ class Profile < ActiveRecord::Base
   validate :twitter_url_must_be_valid
   validate :github_url_must_be_valid
 
+  # extend FriendlyId
+	# friendly_id :slug_candidates, use: [:slugged, :history]
+
+
+  # def slug_candidates
+  #   [
+  #     [:name, :city],
+  #     [:name, :street, :city],
+  #     [:name, :street_number, :street, :city]
+  #   ]
+  # end
+  
   private
 
   # The twitter URL must begin with the string "https://twitter.com/" or else

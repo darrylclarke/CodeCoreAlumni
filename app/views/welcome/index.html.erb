@@ -34,96 +34,11 @@
   </div>
   <div class="row middle_section">
     <div class="container-thumb">
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p class="word">gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="thumbnail">
-          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmWEqcvtd2Nlhzl1LWzPfYWgKPVYj-gqSPVGB0lROsxUMrFu3n" alt="...">
-          <div class="caption">
-            <h3>Profile Name</h3>
-            <p>gdfg sdgdy hshgdgd ghjsd gjs gh sdghjgsgashjg sdgjs j</p>
-            <p><a href="#" class="btn btn-primary" role="button">View Profile</a></p>
-          </div>
-        </div>
-      </div>
+    
+    <% @profiles.each do |profile| %>
+      <%= render "/profiles/front_page_tile", profile: profile, user: profile.user %>
+    <% end %>
+    
     </div>
   </div>
   <div class="row middle_section">

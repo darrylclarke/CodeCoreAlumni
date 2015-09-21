@@ -36,12 +36,10 @@
     </div>
   </div>
   <div class="row middle_section">
-    <div class="container-thumb">
-
+    <div class="container-thumb text-center">
     <% @profiles.each do |profile| %>
       <%= render "/profiles/front_page_tile", profile: profile, user: profile.user %>
     <% end %>
-
     </div>
   </div>
   <div class="row middle_section">

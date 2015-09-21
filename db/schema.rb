@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150921012301) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,8 +79,8 @@ ActiveRecord::Schema.define(version: 20150921012301) do
     t.text     "github"
     t.integer  "user_id"
     t.boolean  "for_hire"
-    t.string   "slug"
     t.string   "title"
+    t.string   "slug"
   end
 
   add_index "profiles", ["slug"], name: "index_profiles_on_slug", unique: true, using: :btree
@@ -137,9 +136,9 @@ ActiveRecord::Schema.define(version: 20150921012301) do
     t.string   "password_digest"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "password_reset_token"
     t.boolean  "is_active"
     t.boolean  "is_admin"
-    t.string   "password_reset_token"
     t.string   "slug"
   end
 

@@ -1,7 +1,7 @@
 <div id="<%= e.id %>-experience">
   <b>Tile:</b> <%=  e.job_title %><br>
   <b>Company:</b> <%= e.company %><br>
-  <b>URL:</b> <%= e.company_url %><br>
+  <a href="http://<%= e.company_url %>"><b>URL:</b>: <%= e.company_url %><br><a>
   <b>Description:</b> <%= e.description %><br>
   <b>Current Position:</b>
   <% if e.presently_working == TRUE %>

@@ -1,0 +1,10 @@
+<table class="table" id="tags-list">
+<tr><b>all skills</b></tr>
+<br>
+<% @tags.each do |t| %>
+  <tr>
+    <td><%= t.name%></td>
+    <td><%= link_to "Delete Skill", tag_path(t.id), method: :delete%></td>
+  </tr>
+<% end %>
+</table>

@@ -55,8 +55,13 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
-    @user = @profile.user
+    if params[:slug]
+      @user = User.find_by_slug( params[:slug] )
+      @profile = @user.profile
+    else
+      @profile = Profile.find( params[:id] )
+      @user    = @profile.user
+    end
   end
 
   def index

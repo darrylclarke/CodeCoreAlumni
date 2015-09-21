@@ -7,8 +7,11 @@
   <% end %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
+    <div class="text-center">
     <%= recaptcha_tags %>
+    <br>
   <div class="form-group">
-    <%= f.submit  class: "btn btn-primary" %>
+    <%= f.submit  class: "btn btn-primary btn-add" %>
   </div>
+</div>
 <% end %>

@@ -91,13 +91,12 @@ a:hover {
   box-shadow: none !important;
 }
 
-.tab-pane {
-
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0px 0px 5px 5px;
-    padding: 10px;
+.main_tab {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
 }
 
 .nav-tabs {
@@ -195,7 +194,6 @@ font-size: 70px;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
-
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
@@ -247,7 +245,19 @@ font-size: 70px;
     cursor: default;
 }
 
-.btn:hover, .btn:focus, .btn.focus {
+.btn:hover {
     color: #CB0D0F;
     text-decoration: none;
+}
+
+.btn-add:hover   {
+    color: #CB0D0F;
+    color: #FFF;
+    background-color: #CB0D0F;
+    border-color: #CB0D0F;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

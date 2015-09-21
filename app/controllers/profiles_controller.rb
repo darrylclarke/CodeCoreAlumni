@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
 
-
   before_action :authorize!, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @user = current_user
@@ -29,6 +29,10 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    @user = current_user
+    if @profile.user_id != current_user.id
+      redirect_to profile_path(@profile)
+    end
   end
 
   def update
@@ -55,8 +59,13 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
-    @user = @profile.user
+    if params[:slug]
+      @user = User.find_by_slug( params[:slug] )
+      @profile = @user.profile
+    else
+      @profile = Profile.find( params[:id] )
+      @user    = @profile.user
+    end
   end
 
   def index
@@ -68,7 +77,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:description_long, :description_short, :linkedin,
                                     :github, :twitter, :personal_url, :avatar, :resume,
-                                    :for_hire)
+                                    :for_hire, {tag_ids: []})
   end
 
   def authorize!

@@ -1,18 +1,14 @@
 <div id="<%= p.id %>-project">
   <b>Tile:</b><%=  p.title %><br>
   <b>Description:</b> <%= p.description %><br>
-  <b>GitHub</b>: <%= link_to p.github_url%><br>
-  <b>Project link:</b>: <%= link_to p.direct_url%><br>
-  <b>Project Dat:</b> <%= p.date %><br>
+  <a href="http://<%= p.github_url %>"><b>GitHub</b>: <%= p.github_url%><br><a>
+  <a href="http://<%= p.direct_url %>"><b>Project link:</b>: <%= p.direct_url %><br><a>
+  <b>Project Date:</b> <%= p.date %><br>
   <span class="right"><a data-toggle="modal" data-target="#<%= p.id %>-modal">Edit</a> |
    <%= link_to "Delete", project_path(p), method: :delete, remote: true %></span>
    <hr>
    <br>
 </div>
-
-
-
-
 
 <div class="modal fade" id="<%= p.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

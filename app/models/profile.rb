@@ -1,5 +1,9 @@
 class Profile < ActiveRecord::Base
+
   belongs_to :user
+
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :resume, ResumeUploader
@@ -13,12 +17,27 @@ class Profile < ActiveRecord::Base
 
 
 
+
   scope :for_hire, -> { where(for_hire: false) }
 
   # scope :for_hire_all, -> { where(for_hire: false) && Profile.select() }
   # def self.
   #   Profile.select('description_long', 'description_short', 'avatar', 'user_id', 'for_hire?')
   # end
+
+
+  # extend FriendlyId
+	# friendly_id :slug_candidates, use: [:slugged, :history]
+
+
+  # def slug_candidates
+  #   [
+  #     [:name, :city],
+  #     [:name, :street, :city],
+  #     [:name, :street_number, :street, :city]
+  #   ]
+  # end
+
 
   private
 

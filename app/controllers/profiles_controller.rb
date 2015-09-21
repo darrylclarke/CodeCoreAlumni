@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     respond_to do |format|
       if @profile.save
-        format.html  { redirect_to profile_slug_path(slug: @user.slug), notice: "Profile created!" }
+        format.html  { redirect_to profile_path(slug: @user.slug), notice: "Profile created!" }
         format.json  { render :show, status: :created, location: @profile }
       else
         format.html { render :new, alert: "Profile failed to create!"  }
@@ -77,7 +77,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:description_long, :description_short, :linkedin,
+    params.require(:profile).permit(:title, :description_long, :description_short, :linkedin,
                                     :github, :twitter, :personal_url, :avatar, :resume,
                                     :for_hire, {tag_ids: []})
   end
